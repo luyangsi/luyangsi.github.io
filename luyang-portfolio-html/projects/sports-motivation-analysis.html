@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sports Motivation Analysis | Luyang Si</title>
+  <meta name="description" content="An applied research analysis repository using simulated data to preserve privacy while keeping schema consistent for reproducible workflows." />
+  <link rel="icon" href="../favicon.svg" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="brand" href="../">
+      <strong>Luyang Si</strong>
+      <span class="small">Data Engineering • Data Quality • NLP</span>
+    </a>
+    <nav class="navlinks">
+      <a class="btn pill" href="../">Home</a>
+      <a class="btn pill primary" href="../projects/">Projects</a>
+      <a class="btn pill" href="../research/">Research</a>
+      <a class="btn pill" href="../experience/">Experience</a>
+      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h1>Sports Motivation Analysis</h1>
+    <p>An applied research analysis repository using simulated data to preserve privacy while keeping schema consistent for reproducible workflows.</p>
+
+    <hr />
+
+    <h2>Problem</h2>
+    <p>Human-subject datasets require protection; sharing analysis code should not expose participant records.</p>
+
+    <h2>Context and constraints</h2>
+    <div class="card" style="padding: 12px 14px;">
+      <ul class="list">
+        <li>Use simulated data with the same schema as the original study data</li><li>Separate data generation from analysis</li><li>Constraints: do not invent findings; keep placeholders if not documented</li>
+      </ul>
+    </div>
+
+    <h2 style="margin-top:18px;">Approach</h2>
+    <ul class="list">
+      <li>Define analysis plan and schema</li><li>Generate a simulated dataset preserving schema</li><li>Run analysis and reporting in a reproducible structure</li>
+    </ul>
+
+    <h2 style="margin-top:18px;">Architecture</h2>
+    <pre class="mermaid">
+flowchart LR
+  A[Study design] --> B[Define schema]
+  B --> C[Generate simulated dataset]
+  C --> D[Run analysis]
+  D --> E[Report + visuals]
+  E --> F[Privacy-safe sharing]
+    </pre>
+
+    <h2 style="margin-top:18px;">Implementation highlights</h2>
+    <ul class="list">
+      <li>Privacy-first data handling via simulated dataset with preserved schema</li><li>Reproducible layout for notebooks/reports</li><li>Clear boundaries for what is shared publicly</li>
+    </ul>
+
+    <h2 style="margin-top:18px;">Results and impact</h2>
+    <div class="notice">
+      Add findings only if documented in the repository. Otherwise:
+- [PLACEHOLDER: key findings]
+- [PLACEHOLDER: methods]
+- [PLACEHOLDER: interpretation]
+    </div>
+
+    <h2 style="margin-top:18px;">Tech stack</h2>
+    <p>Python, data analysis, reproducible reporting.</p>
+
+    <h2 style="margin-top:18px;">Links</h2>
+    <ul class="list">
+      <li>Repo: <a href="https://github.com/luyangsi/Sports_Motivitation_Analysis" target="_blank" rel="noreferrer">https://github.com/luyangsi/Sports_Motivitation_Analysis</a></li>
+      <li>Projects index: <a href="./">/projects/</a></li>
+    </ul>
+
+    <h2 style="margin-top:18px;">What I’d improve next</h2>
+    <p>Add a documented analysis protocol and an automated notebook-to-HTML report pipeline in CI.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex; flex-direction:column; gap:8px;">
+    <div class="small">© <span id="y"></span> Luyang Si. Hosted on GitHub Pages.</div>
+    <div class="small">
+      Links:
+      <a href="https://www.linkedin.com/in/luyang-si-409468254/" target="_blank" rel="noreferrer">LinkedIn</a>
+      ·
+      <a href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      ·
+      <a href="mailto:ls36@illinois.edu">ls36@illinois.edu</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="../assets/main.js"></script>
+
+</body>
+</html>

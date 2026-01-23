@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>index.html</loc></url>
+  <url><loc>projects/index.html</loc></url>
+  <url><loc>projects/research-dataset-recommender.html</loc></url>
+  <url><loc>projects/canvas-platform-data-ingestion.html</loc></url>
+  <url><loc>projects/wikipedia-api-extraction.html</loc></url>
+  <url><loc>projects/crossref-retraction-metadata.html</loc></url>
+  <url><loc>projects/finance-concept-analysis.html</loc></url>
+  <url><loc>projects/etl-pipeline-bank-info.html</loc></url>
+  <url><loc>projects/sports-motivation-analysis.html</loc></url>
+  <url><loc>research/index.html</loc></url>
+  <url><loc>experience/index.html</loc></url>
+  <url><loc>contact/index.html</loc></url>
+</urlset>
