@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Research Dataset Recommendation System | Luyang Si</title>
+  <meta name="description" content="A research-support tool that matches research questions to public datasets across 25+ sources, cutting discovery time from ~2 hours to <5 minutes." />
+  <link rel="icon" href="../favicon.svg" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="brand" href="../">
+      <strong>Luyang Si</strong>
+      <span class="small">Data Engineering • Data Quality • NLP</span>
+    </a>
+    <nav class="navlinks">
+      <a class="btn pill" href="../">Home</a>
+      <a class="btn pill primary" href="../projects/">Projects</a>
+      <a class="btn pill" href="../research/">Research</a>
+      <a class="btn pill" href="../experience/">Experience</a>
+      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h1>Research Dataset Recommendation System</h1>
+    <p>A research-support tool that matches research questions to public datasets across 25+ sources, cutting discovery time from ~2 hours to <5 minutes.</p>
+
+    <hr />
+
+    <h2>Problem</h2>
+    <p>Researchers often spend significant time searching across many portals to locate an appropriate dataset for a research question.</p>
+
+    <h2>Context and constraints</h2>
+    <div class="card" style="padding: 12px 14px;">
+      <ul class="list">
+        <li>Input: a research question (free text)</li><li>Output: ranked dataset recommendations with access notes</li><li>Catalog spans 25+ sources (e.g., CFPB, FRED, Census, WRDS)</li><li>Constraints: avoid inventing evaluation metrics beyond stated time savings</li>
+      </ul>
+    </div>
+
+    <h2 style="margin-top:18px;">Approach</h2>
+    <ul class="list">
+      <li>Curate and maintain a dataset catalog across 25+ sources</li><li>Convert questions into keywords/signals and match against the catalog</li><li>Provide an end-to-end analysis example (CFPB complaints) using OLS regression and t-tests</li>
+    </ul>
+
+    <h2 style="margin-top:18px;">Architecture</h2>
+    <pre class="mermaid">
+flowchart LR
+  A[Research question] --> B[Text parsing & keywords]
+  B --> C[Dataset catalog (25+ sources)]
+  C --> D[Matching & ranking]
+  D --> E[Recommendation list + access notes]
+  E --> F[Reproducible analysis notebook]
+    </pre>
+
+    <h2 style="margin-top:18px;">Implementation highlights</h2>
+    <ul class="list">
+      <li>Catalog design supports adding new sources with minimal friction</li><li>Separation of concerns between ingestion and ranking logic</li><li>Reproducible analysis workflow with publication-ready visuals</li>
+    </ul>
+
+    <h2 style="margin-top:18px;">Results and impact</h2>
+    <div class="notice">
+      Reported impact: reduced manual dataset search time from ~2 hours to <5 minutes; included an end-to-end CFPB analysis using OLS regression and t-tests.
+    </div>
+
+    <h2 style="margin-top:18px;">Tech stack</h2>
+    <p>Python, pandas, statistical modeling (OLS), hypothesis testing (t-tests), Jupyter.</p>
+
+    <h2 style="margin-top:18px;">Links</h2>
+    <ul class="list">
+      <li>Repo: <a href="https://github.com/luyangsi/Research_Dataset_Recommender" target="_blank" rel="noreferrer">https://github.com/luyangsi/Research_Dataset_Recommender</a></li>
+      <li>Projects index: <a href="./">/projects/</a></li>
+    </ul>
+
+    <h2 style="margin-top:18px;">What I’d improve next</h2>
+    <p>Add richer query understanding (synonyms, domain ontologies) and introduce relevance evaluation with labeled queries.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex; flex-direction:column; gap:8px;">
+    <div class="small">© <span id="y"></span> Luyang Si. Hosted on GitHub Pages.</div>
+    <div class="small">
+      Links:
+      <a href="https://www.linkedin.com/in/luyang-si-409468254/" target="_blank" rel="noreferrer">LinkedIn</a>
+      ·
+      <a href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      ·
+      <a href="mailto:ls36@illinois.edu">ls36@illinois.edu</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="../assets/main.js"></script>
+
+</body>
+</html>
