@@ -1,16 +1,652 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Name | Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Luyang Si | Portfolio</title>
+    <meta
+      name="description"
+      content="Data Engineer / Data Analyst focused on production-style pipelines, data quality, and applied NLP."
+    />
+    <meta name="robots" content="index,follow" />
+    <style>
+      :root {
+        --bg: #0b0f17;
+        --panel: #0f1624;
+        --text: #e8eefc;
+        --muted: #a8b3cf;
+        --border: rgba(232, 238, 252, 0.12);
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --radius: 16px;
+        --max: 1080px;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+          "Courier New", monospace;
+        --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji";
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: var(--sans);
+        background: radial-gradient(1200px 800px at 20% 10%, rgba(110, 168, 254, 0.18), transparent 60%),
+          radial-gradient(1000px 700px at 85% 0%, rgba(126, 231, 135, 0.12), transparent 55%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a.underline {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(12px);
+        background: rgba(11, 15, 23, 0.65);
+        border-bottom: 1px solid rgba(232, 238, 252, 0.1);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 12px 0;
+      }
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .brand strong {
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .small {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: rgba(232, 238, 252, 0.06);
+        transition: transform 0.08s ease, background 0.2s ease, border-color 0.2s ease;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        background: rgba(232, 238, 252, 0.1);
+        border-color: rgba(232, 238, 252, 0.2);
+      }
+      .btn.primary {
+        background: linear-gradient(135deg, rgba(110, 168, 254, 0.3), rgba(126, 231, 135, 0.18));
+        border-color: rgba(110, 168, 254, 0.35);
+      }
+      .btn.pill {
+        padding: 8px 10px;
+        border-radius: 999px;
+      }
+
+      main {
+        padding: 18px 0 44px 0;
+      }
+      section {
+        padding: 28px 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
+        margin: 0 0 12px 0;
+      }
+      h1 {
+        font-size: clamp(34px, 4vw, 46px);
+      }
+      h2 {
+        font-size: 26px;
+      }
+      h3 {
+        font-size: 18px;
+      }
+      p {
+        margin: 0 0 14px 0;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+      @media (min-width: 860px) {
+        .grid.cols2 {
+          grid-template-columns: 1.2fr 1fr;
+        }
+        .grid.cols3 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .card {
+        background: rgba(15, 22, 36, 0.72);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 16px;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(232, 238, 252, 0.04);
+        color: var(--muted);
+        font-size: 12px;
+        margin: 0 6px 6px 0;
+      }
+
+      .mono {
+        font-family: var(--mono);
+      }
+
+      .list {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+      .list li {
+        margin: 6px 0;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 18px 0;
+      }
+
+      .proof {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .proof b {
+        color: var(--text);
+      }
+
+      .project-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      details {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(232, 238, 252, 0.03);
+        padding: 12px 12px;
+      }
+      details + details {
+        margin-top: 12px;
+      }
+      summary {
+        cursor: pointer;
+        list-style: none;
+        font-weight: 800;
+        color: var(--text);
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      summary .hint {
+        font-weight: 600;
+        color: var(--muted);
+        margin-left: 10px;
+        font-size: 13px;
+      }
+      pre {
+        background: rgba(15, 22, 36, 0.6);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 12px;
+        overflow: auto;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      footer {
+        border-top: 1px solid rgba(232, 238, 252, 0.1);
+        background: rgba(11, 15, 23, 0.55);
+        padding: 18px 0;
+      }
+
+      /* smooth scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+      /* anchor offset for sticky header */
+      .anchor {
+        scroll-margin-top: 90px;
+      }
+    </style>
   </head>
+
   <body>
-    <h1>Your Name</h1>
-    <p>Data Engineer | Portfolio</p>
-    <ul>
-      <li><a href="https://github.com/yourname">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/yourname/">LinkedIn</a></li>
-    </ul>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#home">
+          <strong>Luyang Si</strong>
+          <span class="small">Data Engineering • Data Quality • NLP</span>
+        </a>
+
+        <nav style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;">
+          <a class="btn pill" href="#home">Home</a>
+          <a class="btn pill" href="#projects">Projects</a>
+          <a class="btn pill" href="#research">Research</a>
+          <a class="btn pill" href="#experience">Experience</a>
+          <a class="btn pill" href="#contact">Contact</a>
+          <a class="btn primary pill" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- HOME -->
+      <section id="home" class="anchor">
+        <div class="grid cols2" style="align-items:start;">
+          <div>
+            <h1>Portfolio</h1>
+            <p style="font-size:16px;">
+              Data Engineer / Data Analyst focused on production-style pipelines, data quality, and applied NLP.
+            </p>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin:16px 0 10px 0;">
+              <a class="btn primary" href="#projects">View projects</a>
+              <a class="btn" href="https://www.linkedin.com/in/luyang-si-409468254/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="btn" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="btn" href="mailto:ls36@illinois.edu">Email</a>
+              <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">Resume (put resume.pdf here)</a>
+            </div>
+
+            <div class="card proof" style="margin-top:12px;">
+              <div><b>Proof #1:</b> Built a dataset recommender across 25+ sources; reduced discovery time from ~2 hours to &lt;5 minutes.</div>
+              <div><b>Proof #2:</b> Implemented rerun-safe incremental ingestion via watermarking with auditing and data quality checks.</div>
+              <div><b>Proof #3:</b> Conducted Crossref retraction metadata analysis and documented indexing drift (208 DOIs) affecting research integrity.</div>
+            </div>
+
+            <p class="small" style="margin-top:12px;">
+              This page is a single static HTML file suitable for GitHub Pages (github.io).
+            </p>
+          </div>
+
+          <div class="card">
+            <h2 style="margin-bottom:10px;">Quick profile</h2>
+            <div>
+              <span class="badge">Champaign, IL</span>
+              <span class="badge">Python</span>
+              <span class="badge">SQL</span>
+              <span class="badge">Data Quality</span>
+              <span class="badge">NLP</span>
+            </div>
+
+            <hr />
+
+            <h3 style="margin-bottom:10px;">Education</h3>
+            <p>
+              <b style="color:var(--text)">University of Illinois Urbana–Champaign (UIUC)</b><br />
+              B.S. Information Sciences + Data Science (08/2022–08/2025)
+            </p>
+            <p class="small">
+              Major GPA: 3.65/4.0 · Overall GPA: 3.54/4.0 (optional)
+            </p>
+
+            <hr />
+
+            <h3 style="margin-bottom:10px;">Skills</h3>
+            <div>
+              <span class="badge">Python</span><span class="badge">Java</span><span class="badge">C++</span><span class="badge">R</span><span class="badge">SQL</span>
+              <span class="badge">Power BI</span><span class="badge">Tableau</span><span class="badge">pandas</span>
+              <span class="badge">PyTorch</span><span class="badge">BERT</span><span class="badge">spaCy</span><span class="badge">LDA</span><span class="badge">NMF</span>
+              <span class="badge">Hugging Face</span><span class="badge">GitHub</span><span class="badge">Jupyter</span><span class="badge">VS Code</span>
+              <span class="badge">HTML</span><span class="badge">CSS</span>
+            </div>
+
+            <hr />
+
+            <h3 style="margin-bottom:10px;">Certifications</h3>
+            <ul class="list">
+              <li>IBM Data Engineering Professional Certification</li>
+              <li>Google Project Management Professional Certification</li>
+              <li>Google Business Intelligence Professional Certification</li>
+            </ul>
+
+            <hr />
+
+            <h3 style="margin-bottom:10px;">Contact</h3>
+            <p class="small">
+              <span class="mono">ls36@illinois.edu</span> ·
+              <a class="underline" href="https://www.linkedin.com/in/luyang-si-409468254/" target="_blank" rel="noreferrer">LinkedIn</a> ·
+              <a class="underline" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="anchor">
+        <h2>Projects</h2>
+        <p>每个项目包含：Problem → Constraints → Approach → Architecture → Highlights → Results → Links → Next.</p>
+
+        <div class="grid cols3" style="margin-top:14px;">
+          <div class="card">
+            <div class="project-head">
+              <div>
+                <h3>Research Dataset Recommendation System</h3>
+                <p>Matches research questions to datasets across 25+ sources; reduces search time from ~2 hours to &lt;5 minutes.</p>
+              </div>
+            </div>
+            <div>
+              <span class="badge">Data Discovery</span><span class="badge">Analytics</span><span class="badge">Python</span>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+              <a class="btn" href="https://github.com/luyangsi/Research_Dataset_Recommender" target="_blank" rel="noreferrer">Repo</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Canvas Platform Data Ingestion</h3>
+            <p>Medallion-layered pipeline (raw/cur/meta) for Azure SQL with watermark-based incremental loads and monitoring.</p>
+            <div>
+              <span class="badge">Data Engineering</span><span class="badge">Azure SQL</span><span class="badge">Watermarking</span>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+              <a class="btn" href="https://github.com/luyangsi/Canvas_pipeline" target="_blank" rel="noreferrer">Repo</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Crossref Retraction Metadata Analysis</h3>
+            <p>Analyzes retraction-flag consistency and tracks indexing drift (208 DOIs) impacting research integrity.</p>
+            <div>
+              <span class="badge">Data Quality</span><span class="badge">Metadata</span><span class="badge">Research</span>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+              <a class="btn" href="https://github.com/luyangsi/Crossref_Metadata_Analysis" target="_blank" rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top:18px;">Detailed case studies (expand)</h3>
+
+        <details>
+          <summary>1) Research Dataset Recommendation System <span class="hint">25+ sources · ~2h → &lt;5min</span></summary>
+          <p><b style="color:var(--text)">Problem:</b> Researchers spend substantial time searching many portals to locate an appropriate dataset.</p>
+          <p><b style="color:var(--text)">Constraints:</b> Reproducible; easy to extend with new sources; no invented metrics.</p>
+          <p><b style="color:var(--text)">Approach:</b> Curate dataset catalog across 25+ sources (e.g., CFPB, FRED, Census, WRDS); match question to catalog; provide analysis notebook (CFPB) with OLS regression and t-tests.</p>
+          <p><b style="color:var(--text)">Architecture:</b></p>
+          <pre>
+[Research question] → [Text parsing/keywords] → [Dataset catalog (25+ sources)]
+                         ↓
+                   [Matching/ranking]
+                         ↓
+            [Recommendations + access notes] → [Analysis notebook (CFPB example)]
+          </pre>
+          <p><b style="color:var(--text)">Results:</b> Reduced manual dataset search time from ~2 hours to &lt;5 minutes; demonstrated end-to-end analysis on CFPB consumer complaints using OLS regression and t-tests.</p>
+          <p><b style="color:var(--text)">Links:</b> <a class="underline" href="https://github.com/luyangsi/Research_Dataset_Recommender" target="_blank" rel="noreferrer">GitHub repo</a></p>
+          <p><b style="color:var(--text)">Next:</b> Add richer query understanding (synonyms/ontologies) and evaluation metrics for recommendation relevance.</p>
+        </details>
+
+        <details>
+          <summary>2) Canvas Platform Data Ingestion <span class="hint">raw/cur/meta · watermarking · DQ</span></summary>
+          <p><b style="color:var(--text)">Problem:</b> Analytics teams need reliable, rerunnable ingestion of semi-structured data with auditing and data quality checks.</p>
+          <p><b style="color:var(--text)">Constraints:</b> Incremental loads without full reprocessing; run auditing; schema-drift awareness.</p>
+          <p><b style="color:var(--text)">Approach:</b> Medallion architecture (raw → curated → meta); watermark-based incremental ingestion; run metadata + data quality checks + schema-drift detection.</p>
+          <p><b style="color:var(--text)">Architecture:</b></p>
+          <pre>
+[JSONL source] → [raw tables] → [curated transforms] → [analytics-ready tables]
+                    ↓               ↓                   ↓
+              [meta.job_run]   [meta.dq_results]   [meta.schema_drift]
+                    ↓
+             [watermark (rerun-safe incremental)]
+          </pre>
+          <p><b style="color:var(--text)">Results:</b> Reduced reprocessing by loading only new/changed data based on watermark; improved transparency via run auditing + quality monitoring.</p>
+          <p><b style="color:var(--text)">Links:</b> <a class="underline" href="https://github.com/luyangsi/Canvas_pipeline" target="_blank" rel="noreferrer">GitHub repo</a></p>
+          <p><b style="color:var(--text)">Next:</b> Add alerting for DQ failures and contract tests to guard against upstream schema changes.</p>
+        </details>
+
+        <details>
+          <summary>3) Wikipedia API Extraction <span class="hint">EN↔ZH · multilingual embeddings</span></summary>
+          <p><b style="color:var(--text)">Problem:</b> Cross-language content differences can introduce inconsistency; need scalable mismatch discovery.</p>
+          <p><b style="color:var(--text)">Constraints:</b> Candidate pairing + similarity at document and sentence levels; no invented accuracy numbers.</p>
+          <p><b style="color:var(--text)">Approach:</b> Extract pages; generate EN↔ZH candidate pairs across identity categories; compute similarity using multilingual embeddings; surface low-similarity sentence pairs for review.</p>
+          <p><b style="color:var(--text)">Architecture:</b></p>
+          <pre>
+[Wikipedia API] → [Page extraction] → [Candidate pairing EN↔ZH]
+                       ↓
+              [Sentence segmentation] → [Multilingual embeddings] → [Similarity scoring]
+                                                                     ↓
+                                                             [Low-similarity mismatches]
+          </pre>
+          <p><b style="color:var(--text)">Links:</b> <a class="underline" href="https://github.com/luyangsi/Wikipedia_API_Extraction" target="_blank" rel="noreferrer">GitHub repo</a></p>
+          <p><b style="color:var(--text)">Next:</b> Add human-in-the-loop labeling to validate mismatch quality and calibrate thresholds.</p>
+        </details>
+
+        <details>
+          <summary>4) Crossref Retraction Metadata Analysis <span class="hint">208 DOIs drift (Apr 2023 vs Jul 2024)</span></summary>
+          <p><b style="color:var(--text)">Problem:</b> Incorrect/drifting retraction metadata can propagate misinformation in scholarly systems.</p>
+          <p><b style="color:var(--text)">Constraints:</b> Snapshot-based comparison; phrase extraction; reproducible reporting.</p>
+          <p><b style="color:var(--text)">Approach:</b> Collect DOI metadata snapshots; extract retraction phrases in titles; compare with recorded status; report drift.</p>
+          <p><b style="color:var(--text)">Architecture:</b></p>
+          <pre>
+[Crossref metadata] → [Snapshot Apr 2023] ┐
+                    → [Snapshot Jul 2024] ├→ [Phrase extraction] → [Consistency checks] → [Drift report (208 DOIs)]
+                                          ┘
+          </pre>
+          <p><b style="color:var(--text)">Results:</b> Identified 208 DOIs marked retracted in April 2023 but not in July 2024; highlighted risk of relying on a single metadata source.</p>
+          <p><b style="color:var(--text)">Links:</b> <a class="underline" href="https://github.com/luyangsi/Crossref_Metadata_Analysis" target="_blank" rel="noreferrer">GitHub repo</a></p>
+          <p><b style="color:var(--text)">Next:</b> Add multi-source validation (publisher notices / other registries) and anomaly detection for status shifts.</p>
+        </details>
+
+        <details>
+          <summary>5) Finance Concept Analysis <span class="hint">simulations · learning repo</span></summary>
+          <p><b style="color:var(--text)">Purpose:</b> A learning + simulation workspace for quantitative finance concepts and personal-finance decision-making.</p>
+          <p><b style="color:var(--text)">Notes:</b> Educational framing; do not claim performance metrics not explicitly measured.</p>
+          <p><b style="color:var(--text)">Links:</b> <a class="underline" href="https://github.com/luyangsi/Finance-concept-analysis" target="_blank" rel="noreferrer">GitHub repo</a></p>
+        </details>
+
+        <details>
+          <summary>6) ETL Pipeline: Bank Info <span class="hint">Wikipedia → CSV/SQLite · Docker/CI</span></summary>
+          <p><b style="color:var(--text)">Problem:</b> Build a reproducible ETL pipeline with portable execution and clean outputs.</p>
+          <p><b style="color:var(--text)">Approach:</b> Extract largest banks table from Wikipedia; transform market cap currency via local exchange-rate CSV (USD → GBP/EUR/INR); load to CSV and SQLite; provide CLI/Makefile/Docker/CI smoke test.</p>
+          <p><b style="color:var(--text)">Links:</b> <a class="underline" href="https://github.com/luyangsi/ETL_Pipeline_Bank_Info" target="_blank" rel="noreferrer">GitHub repo</a></p>
+        </details>
+
+        <details>
+          <summary>7) Sports Motivation Analysis <span class="hint">simulated data for privacy</span></summary>
+          <p><b style="color:var(--text)">Purpose:</b> Applied research analysis structured for privacy-aware sharing.</p>
+          <p><b style="color:var(--text)">Privacy:</b> Dataset in repo should be simulated for privacy/human-subjects protection; schema preserved but no real participant records.</p>
+          <p><b style="color:var(--text)">Findings:</b> 仅在 repo 文档中确实存在时再补充；否则保持占位符。</p>
+          <p><b style="color:var(--text)">Links:</b> <a class="underline" href="https://github.com/luyangsi/Sports_Motivitation_Analysis" target="_blank" rel="noreferrer">GitHub repo</a></p>
+        </details>
+      </section>
+
+      <!-- RESEARCH -->
+      <section id="research" class="anchor">
+        <h2>Research</h2>
+        <div class="grid cols2" style="margin-top:14px;">
+          <div class="card">
+            <h3>Manuscript</h3>
+            <p style="color:var(--text); font-weight:800;">
+              Tracking the Data Quality Landscape of Retracted Papers: Flag Usage in Titles and Changes in DOI Retraction Status.
+            </p>
+            <p class="small">Authors: Luyang Si; Malik Oyewale Salami; Jodi Schneider</p>
+          </div>
+
+          <div class="card">
+            <h3>Datasets (DOI)</h3>
+            <ul class="list">
+              <li><a class="underline" href="https://doi.org/10.13012/B2IDB-5333456_V1" target="_blank" rel="noreferrer">10.13012/B2IDB-5333456_V1</a></li>
+              <li><a class="underline" href="https://doi.org/10.13012/B2IDB-2907908_V1" target="_blank" rel="noreferrer">10.13012/B2IDB-2907908_V1</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <h3>Presentations</h3>
+          <ul class="list">
+            <li>
+              2024 iSchool Research Showcase — Distinguishing Retracted Publications from Retraction Notices in Crossref Data.
+              <a class="underline" href="https://hdl.handle.net/2142/125134" target="_blank" rel="noreferrer">hdl:2142/125134</a>
+            </li>
+            <li>
+              2025 Undergraduate Research Symposium — Psychological Motivation Factors that Enhance Confidence and Participation in Sports Among Students with Poor Physical Fitness.
+              <a class="underline" href="https://hdl.handle.net/2142/128150" target="_blank" rel="noreferrer">hdl:2142/128150</a>
+            </li>
+            <li>
+              2025 Undergraduate Research Symposium — Analyzing the Consistency of Retraction Phrases Among Different Journals in Crossref Data.
+              <a class="underline" href="https://hdl.handle.net/2142/129058" target="_blank" rel="noreferrer">hdl:2142/129058</a>
+            </li>
+            <li>
+              2025 STEM Career Exploration and Symposium — Data Quality Assessment of Retracted Papers: Patterns and Retraction Status Shifts in Titles.
+              <a class="underline" href="https://hdl.handle.net/2142/129058" target="_blank" rel="noreferrer">hdl:2142/129058</a>
+              (same handle)
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="anchor">
+        <h2>Experience</h2>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>Narciszmade — Data Analyst / Information Consultant</h3>
+          <p class="small">Savannah, GA · 11/2025–Present</p>
+          <ul class="list">
+            <li>Develop sales data analysis pipelines using Python and R.</li>
+            <li>Build and manage databases using SQL.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>Red Then Black (RtB) — 请从 LinkedIn 补全</h3>
+          <p class="small">[Location] · [Dates]</p>
+          <ul class="list">
+            <li>[Paste exact title from LinkedIn]</li>
+            <li>[3–5 bullets describing impact + tools used]</li>
+            <li>[Do not guess; placeholders until filled]</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>Information Quality Lab — Independent Researcher</h3>
+          <p class="small">Champaign, IL · 08/2024–08/2025</p>
+          <ul class="list">
+            <li>Investigated wrong indexing in Crossref data and reliability of title keywords for retraction classification.</li>
+            <li>Annotated dataset; built pipeline to collect DOI metadata, extract title keywords, and compare to retraction flags.</li>
+            <li>Drafted manuscript, dataset & pipeline documentation, slides/posters.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>Business Intelligence Group — Information Consultant</h3>
+          <p class="small">Champaign, IL · 08/2024–12/2024</p>
+          <ul class="list">
+            <li>Optimized stock management systems for a national food distributor.</li>
+            <li>Built inventory forecasting using Random Forest trained on historical sales + external factors (stock market performance, GDP, import/export data).</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>Information Experience and Accessibility Lab — Volunteer Researcher</h3>
+          <p class="small">Champaign, IL · 08/2024–12/2024</p>
+          <ul class="list">
+            <li>Investigated integration of generative AI in mHealth applications.</li>
+            <li>Built Flutter app promoting healthier lifestyle for aging population.</li>
+            <li>Designed UI; fine-tuned LLaMA models to improve AI-generated healthcare suggestions for older adults.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>EasyTransfer — Overseas Market Operator</h3>
+          <p class="small">Beijing, China · 05/2023–08/2023</p>
+          <ul class="list">
+            <li>Analyzed user behaviors/attitudes on financial products to inform advertising strategies.</li>
+            <li>Coordinated with student council, bank, and financial service agencies.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>Leadership — RCMoon Educational Organization (Co-Founder / Vice President)</h3>
+          <p class="small">Champaign, IL · 03/2024–05/2025</p>
+          <ul class="list">
+            <li>Created Instagram content; collected and analyzed social media data; provided development suggestions.</li>
+            <li>Designed club policy, recruitment, advertising, sponsorship plan.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="anchor">
+        <h2>Contact</h2>
+        <div class="card" style="margin-top:14px;">
+          <p>最快方式是邮件；也可以在 LinkedIn 私信。</p>
+          <ul class="list">
+            <li>Email: <a class="underline" href="mailto:ls36@illinois.edu">ls36@illinois.edu</a></li>
+            <li>LinkedIn: <a class="underline" href="https://www.linkedin.com/in/luyang-si-409468254/" target="_blank" rel="noreferrer">profile</a></li>
+            <li>GitHub: <a class="underline" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">github.com/luyangsi</a></li>
+          </ul>
+          <hr />
+          <p class="small">
+            Resume: 把 <span class="mono">resume.pdf</span> 放到同目录，然后上面的 Resume 链接就会生效。
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="small">© <span id="year"></span> Luyang Si · Static HTML for GitHub Pages</div>
+        <div class="small" style="margin-top:6px;">
+          <a class="underline" href="https://www.linkedin.com/in/luyang-si-409468254/" target="_blank" rel="noreferrer">LinkedIn</a>
+          ·
+          <a class="underline" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+          ·
+          <a class="underline" href="mailto:ls36@illinois.edu">ls36@illinois.edu</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
