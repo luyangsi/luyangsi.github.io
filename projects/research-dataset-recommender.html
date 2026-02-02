@@ -51,11 +51,18 @@
 
     <h2 style="margin-top:18px;">Architecture</h2>
     <pre class="mermaid">flowchart LR
-      A[Research question] --> B[Text parsing & keywords]
-      B --> C[Dataset catalog (25+ sources)]
-      C --> D[Matching & ranking]
-      D --> E[Recommendation list + access notes]
-      E --> F[Reproducible analysis notebook]
+      A["Research question"]
+      B["Text parsing and keywords"]
+      C["Dataset catalog (25+ sources)"]
+      D["Matching and ranking"]
+      E["Recommendation list + access notes"]
+      F["Reproducible analysis notebook"]
+
+      A --> B
+      B --> C
+      C --> D
+      D --> E
+      E --> F
     </pre>
 
     <h2 style="margin-top:18px;">Implementation highlights</h2>
