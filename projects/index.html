@@ -7,6 +7,17 @@
   <meta name="description" content="Project case studies: pipelines, data quality, and applied NLP." />
   <link rel="icon" href="../favicon.svg" />
   <link rel="stylesheet" href="../assets/styles.css" />
+  
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Projects",
+    "description": "Portfolio case studies: data engineering pipelines, data quality analysis, and applied NLP projects",
+    "url": "https://luyangsi.github.io/projects/"
+  }
+  </script>
 </head>
 <body>
 
@@ -31,9 +42,18 @@
   <section class="section">
     <h1>Projects</h1>
     <p>Case studies with a consistent structure: problem, constraints, approach, architecture, results, and next steps.</p>
+    
+    <!-- Filter Section -->
+    <div style="margin-top: 20px; margin-bottom: 16px;">
+      <div class="small" style="margin-bottom: 10px; color: var(--muted);">Filter by tag:</div>
+      <div id="filter-tags" style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <button class="badge" data-filter="all" style="cursor: pointer; border: 1px solid rgba(110,168,254,.35); background: rgba(110,168,254,.15); color: var(--accent); font-weight: 600;">All</button>
+      </div>
+    </div>
+    
     <div class="grid cols3" style="margin-top: 14px;">
 
-<article class="card project-card">
+<article class="card project-card" data-tags="Data Discovery,Analytics,Python">
   <h3>Research Dataset Recommendation System</h3>
   <p>Matches research questions to datasets across 25+ sources; reduces discovery time from ~2 hours to <5 minutes.</p>
   <div class="project-tags"><span class="badge">Data Discovery</span> <span class="badge">Analytics</span> <span class="badge">Python</span></div>
@@ -44,7 +64,7 @@
 </article>
 
 
-<article class="card project-card">
+<article class="card project-card" data-tags="Data Engineering,Azure SQL,Watermarking">
   <h3>Canvas Platform Data Ingestion</h3>
   <p>Medallion-layered pipeline (raw/cur/meta) for Azure SQL with rerun-safe watermarking and monitoring.</p>
   <div class="project-tags"><span class="badge">Data Engineering</span> <span class="badge">Azure SQL</span> <span class="badge">Watermarking</span></div>
@@ -55,7 +75,7 @@
 </article>
 
 
-<article class="card project-card">
+<article class="card project-card" data-tags="NLP,Multilingual,Embeddings">
   <h3>Wikipedia API Extraction</h3>
   <p>Pairs EN↔ZH pages and flags low-similarity mismatch sentences using multilingual embeddings.</p>
   <div class="project-tags"><span class="badge">NLP</span> <span class="badge">Multilingual</span> <span class="badge">Embeddings</span></div>
@@ -66,7 +86,7 @@
 </article>
 
 
-<article class="card project-card">
+<article class="card project-card" data-tags="Data Quality,Metadata,Research">
   <h3>Crossref Retraction Metadata Analysis</h3>
   <p>Checks retraction-flag consistency and tracks indexing drift (208 DOIs) impacting research integrity.</p>
   <div class="project-tags"><span class="badge">Data Quality</span> <span class="badge">Metadata</span> <span class="badge">Research</span></div>
@@ -77,7 +97,7 @@
 </article>
 
 
-<article class="card project-card">
+<article class="card project-card" data-tags="Finance,Simulations,Education">
   <h3>Finance Concept Analysis</h3>
   <p>Learning and simulation workspace for quantitative finance concepts and personal-finance decision-making.</p>
   <div class="project-tags"><span class="badge">Finance</span> <span class="badge">Simulations</span> <span class="badge">Education</span></div>
@@ -88,7 +108,7 @@
 </article>
 
 
-<article class="card project-card">
+<article class="card project-card" data-tags="ETL,SQLite,Docker,CI">
   <h3>ETL Pipeline: Bank Info</h3>
   <p>ETL mini project extracting a Wikipedia table, converting currency via local CSV, and loading to CSV + SQLite.</p>
   <div class="project-tags"><span class="badge">ETL</span> <span class="badge">SQLite</span> <span class="badge">Docker</span> <span class="badge">CI</span></div>
@@ -99,7 +119,7 @@
 </article>
 
 
-<article class="card project-card">
+<article class="card project-card" data-tags="Research,Analytics,Privacy">
   <h3>Sports Motivation Analysis</h3>
   <p>Applied research analysis with simulated data to preserve privacy while keeping schema consistent.</p>
   <div class="project-tags"><span class="badge">Research</span> <span class="badge">Analytics</span> <span class="badge">Privacy</span></div>
@@ -126,7 +146,60 @@
     </div>
   </div>
 </footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
 
-</body>
-</html>
+// Project filtering functionality
+const projects = Array.from(document.querySelectorAll('.project-card'));
+const filterTagsContainer = document.getElementById('filter-tags');
+const allTags = new Set();
+
+// Collect all unique tags
+projects.forEach(project => {
+  const tags = project.getAttribute('data-tags').split(',').map(tag => tag.trim());
+  tags.forEach(tag => allTags.add(tag));
+});
+
+// Create filter buttons for each tag
+const sortedTags = Array.from(allTags).sort();
+sortedTags.forEach(tag => {
+  const btn = document.createElement('button');
+  btn.className = 'badge';
+  btn.textContent = tag;
+  btn.setAttribute('data-filter', tag);
+  btn.style.cursor = 'pointer';
+  btn.style.transition = 'all 0.2s ease';
+  btn.addEventListener('click', () => filterProjects(tag));
+  filterTagsContainer.appendChild(btn);
+});
+
+// Filter function
+function filterProjects(selectedTag) {
+  const filterBtns = document.querySelectorAll('#filter-tags .badge');
+  
+  // Update button styles
+  filterBtns.forEach(btn => {
+    if (btn.getAttribute('data-filter') === selectedTag || (selectedTag === 'all' && btn.getAttribute('data-filter') === 'all')) {
+      btn.style.borderColor = 'rgba(110,168,254,.35)';
+      btn.style.background = 'rgba(110,168,254,.15)';
+      btn.style.color = 'var(--accent)';
+      btn.style.fontWeight = '600';
+    } else {
+      btn.style.borderColor = 'var(--border)';
+      btn.style.background = 'rgba(232,238,252,.04)';
+      btn.style.color = 'var(--muted)';
+      btn.style.fontWeight = '400';
+    }
+  });
+  
+  // Show/hide projects
+  projects.forEach(project => {
+    const projectTags = project.getAttribute('data-tags').split(',').map(tag => tag.trim());
+    if (selectedTag === 'all' || projectTags.includes(selectedTag)) {
+      project.style.display = '';
+    } else {
+      project.style.display = 'none';
+    }
+  });
+}
+</script>
