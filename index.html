@@ -8,6 +8,8 @@
   <meta property="og:title" content="Luyang Si | Portfolio" />
   <meta property="og:description" content="Data Engineer / Data Analyst focused on production-style pipelines, data quality, and applied NLP." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://luyangsi.github.io" />
+  <meta property="og:image" content="https://luyangsi.github.io/images/profile.png" />
   <meta name="robots" content="index,follow" />
   <link rel="icon" href="favicon.svg" />
   <link rel="stylesheet" href="assets/styles.css" />
@@ -43,6 +45,7 @@
       <strong>Luyang Si</strong>
       <span class="small">Data Engineering • Data Quality • NLP</span>
     </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
       <a class="btn pill primary" href="./">Home</a>
       <a class="btn pill" href="./projects/">Projects</a>
@@ -50,6 +53,7 @@
       <a class="btn pill" href="./experience/">Experience</a>
       <a class="btn pill" href="./contact/">Contact</a>
       <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      <button class="theme-toggle" aria-label="Toggle theme">☀</button>
     </nav>
   </div>
 </header>
@@ -58,8 +62,8 @@
   <section class="section">
     <div class="grid cols2" style="align-items:start;">
       <div>
-        <h1>Hi,This is Luyang</h1>
-        <p style="font-size:16px;">Data Engineer / Data Analyst focused on production-style pipelines, data quality, and applied NLP.</p>
+        <h1>Hi, I'm Luyang Si</h1>
+        <p style="font-size:16px;">I build production data pipelines, enforce data quality at scale, and apply NLP to real research problems.</p>
 
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin: 16px 0 10px 0;">
           <a class="btn primary" href="projects/">View projects</a>
@@ -96,9 +100,9 @@
         <hr />
         <h3 style="margin-bottom:10px;">Core strengths</h3>
         <ul class="list">
-          <li>Production-minded pipelines: incremental loads, auditing, schema-drift awareness</li>
-          <li>Analytical workflows: statistical tests and reproducible visuals</li>
-          <li>NLP & embeddings for multilingual semantic similarity</li>
+          <li><strong>Pipeline engineering:</strong> I design incremental, rerun-safe loads using watermarking — so reruns are cheap and audits are automatic.</li>
+          <li><strong>Analytical workflows:</strong> I write reproducible statistical analyses (OLS, t-tests) with publication-ready visuals.</li>
+          <li><strong>NLP &amp; embeddings:</strong> I apply multilingual sentence embeddings to surface quality issues across language boundaries.</li>
         </ul>
         <hr />
         <h3 style="margin-bottom:10px;">Contact</h3>
@@ -112,8 +116,51 @@
   </section>
 
   <section class="section">
+    <h2>Skills</h2>
+    <p style="margin-bottom: 14px;">A snapshot. <a href="skills/" style="color: var(--accent);">View full proficiency breakdown →</a></p>
+    <div class="grid cols3" style="margin-top: 0;">
+      <div class="card" style="padding: 16px;">
+        <h3 style="margin-bottom: 12px; color: var(--accent);">Engineering</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span class="badge">Python</span>
+          <span class="badge">SQL</span>
+          <span class="badge">Azure SQL</span>
+          <span class="badge">ETL / ELT</span>
+          <span class="badge">Docker</span>
+          <span class="badge">SQLite</span>
+          <span class="badge">Git</span>
+        </div>
+      </div>
+      <div class="card" style="padding: 16px;">
+        <h3 style="margin-bottom: 12px; color: var(--accent);">Data Quality &amp; Analysis</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span class="badge">Watermarking</span>
+          <span class="badge">Schema-drift Detection</span>
+          <span class="badge">Statistical Modeling (OLS)</span>
+          <span class="badge">Hypothesis Testing</span>
+          <span class="badge">Pandas</span>
+          <span class="badge">Jupyter</span>
+        </div>
+      </div>
+      <div class="card" style="padding: 16px;">
+        <h3 style="margin-bottom: 12px; color: var(--accent);">NLP &amp; Research</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span class="badge">Multilingual Embeddings</span>
+          <span class="badge">Sentence Transformers</span>
+          <span class="badge">Metadata Analysis</span>
+          <span class="badge">R</span>
+          <span class="badge">Random Forest</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <h2>Featured projects</h2>
     <p>Three fast reads for recruiters. Full list is on the Projects page.</p>
+    <div class="notice" style="margin-bottom: 16px;">
+      <strong>Currently:</strong> Open to data engineering and data analyst roles. Available immediately.
+    </div>
     <div class="grid cols3" style="margin-top: 14px;">
 
 <article class="card project-card">
@@ -166,6 +213,7 @@
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="assets/main.js"></script>
 
 </body>
 </html>

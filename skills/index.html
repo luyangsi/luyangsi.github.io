@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Skills | Luyang Si</title>
+  <meta name="description" content="Technical skills overview: data engineering, data quality, NLP, and research tools." />
+  <link rel="icon" href="../favicon.svg" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <style>
+    .skill-bar-bg {
+      background: var(--border);
+      border-radius: 8px;
+      height: 8px;
+      margin: 6px 0 14px 0;
+    }
+    .skill-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 8px;
+    }
+    .skill-row {
+      margin-bottom: 4px;
+    }
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .skill-label span:first-child {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .skill-label span:last-child {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .skill-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin: -8px 0 14px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="brand" href="../">
+      <strong>Luyang Si</strong>
+      <span class="small">Data Engineering • Data Quality • NLP</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="navlinks">
+      <a class="btn pill" href="../">Home</a>
+      <a class="btn pill" href="../projects/">Projects</a>
+      <a class="btn pill" href="../research/">Research</a>
+      <a class="btn pill" href="../experience/">Experience</a>
+      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      <button class="theme-toggle" aria-label="Toggle theme">☀</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h1>Skills</h1>
+    <p>Proficiency ratings reflect daily-use confidence across production contexts. Every bar corresponds to skills applied in the projects and roles on this portfolio.</p>
+
+    <div class="grid cols3" style="margin-top: 24px; align-items: start;">
+
+      <!-- Engineering -->
+      <div class="card" style="padding: 20px;">
+        <h2 style="margin-bottom: 20px; color: var(--accent);">Engineering</h2>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>Python</span><span>Expert</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 92%;"></div></div>
+          <p class="skill-note">Primary language across all projects — ETL, NLP, data quality, analysis.</p>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>SQL / Azure SQL</span><span>Advanced</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 85%;"></div></div>
+          <p class="skill-note">Medallion pipeline design, watermark queries, audit tables.</p>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>ETL / ELT Pipelines</span><span>Advanced</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 82%;"></div></div>
+          <p class="skill-note">Incremental loads, rerun safety, schema-drift detection.</p>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>Git</span><span>Advanced</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 80%;"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>Docker</span><span>Intermediate</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 65%;"></div></div>
+          <p class="skill-note">Containerized ETL pipelines with CI/CD integration.</p>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>SQLite</span><span>Intermediate</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 60%;"></div></div>
+        </div>
+      </div>
+
+      <!-- Data Quality & Analysis -->
+      <div class="card" style="padding: 20px;">
+        <h2 style="margin-bottom: 20px; color: var(--accent);">Data Quality &amp; Analysis</h2>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>Pandas / Jupyter</span><span>Expert</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 90%;"></div></div>
+          <p class="skill-note">Reproducible workflows with publication-ready visuals.</p>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>Watermarking</span><span>Advanced</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 85%;"></div></div>
+          <p class="skill-note">Rerun-safe incremental ingestion with audit logging.</p>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>Statistical Modeling (OLS)</span><span>Advanced</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 80%;"></div></div>
+          <p class="skill-note">Regression analysis, hypothesis testing, confidence intervals.</p>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>Schema-drift Detection</span><span>Intermediate</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 70%;"></div></div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>Data Annotation</span><span>Intermediate</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 65%;"></div></div>
+          <p class="skill-note">Retraction dataset annotation for research-quality labeling.</p>
+        </div>
+      </div>
+
+      <!-- NLP & Research -->
+      <div class="card" style="padding: 20px;">
+        <h2 style="margin-bottom: 20px; color: var(--accent);">NLP &amp; Research</h2>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>Multilingual Embeddings</span><span>Advanced</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 80%;"></div></div>
+          <p class="skill-note">Sentence Transformers for EN↔ZH quality detection.</p>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>Metadata Analysis</span><span>Advanced</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 82%;"></div></div>
+          <p class="skill-note">DOI retraction status tracking, Crossref data quality.</p>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>R</span><span>Intermediate</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 65%;"></div></div>
+          <p class="skill-note">Statistical analysis for sports motivation and sales data.</p>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>Random Forest</span><span>Intermediate</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 60%;"></div></div>
+          <p class="skill-note">Inventory forecasting with external economic factors.</p>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-label"><span>Academic Writing</span><span>Intermediate</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar" style="width: 68%;"></div></div>
+          <p class="skill-note">Manuscript drafting, dataset documentation, conference posters.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card notice" style="margin-top: 24px;">
+      Proficiency levels: <strong>Expert</strong> = daily production use with depth; <strong>Advanced</strong> = independent project delivery; <strong>Intermediate</strong> = applied in real work, still growing.
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex; flex-direction:column; gap:8px;">
+    <div class="small">© <span id="y"></span> Luyang Si. Hosted on GitHub Pages.</div>
+    <div class="small">
+      Links:
+      <a href="https://www.linkedin.com/in/luyang-si-409468254/" target="_blank" rel="noreferrer">LinkedIn</a>
+      ·
+      <a href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      ·
+      <a href="mailto:ls36@illinois.edu">ls36@illinois.edu</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="../assets/main.js"></script>
+
+</body>
+</html>

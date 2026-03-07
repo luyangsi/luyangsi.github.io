@@ -207,6 +207,120 @@ button:focus-visible {
   }
 }
 
+/* Light theme */
+:root[data-theme="light"] {
+  --bg: #f0f4fc;
+  --panel: rgba(255,255,255,0.88);
+  --text: #1a2035;
+  --muted: #4a5568;
+  --border: rgba(26,32,53,0.12);
+  --shadow: 0 10px 30px rgba(0,0,0,0.10);
+}
+:root[data-theme="light"] body {
+  background:
+    radial-gradient(1200px 800px at 20% 10%, rgba(110,168,254,.10), transparent 60%),
+    radial-gradient(1000px 700px at 85% 0%, rgba(126,231,135,.07), transparent 55%),
+    var(--bg);
+}
+:root[data-theme="light"] header {
+  background: rgba(240,244,252,.80);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px 10px;
+  line-height: 1;
+  transition: background .2s ease, border-color .2s ease;
+}
+.theme-toggle:hover {
+  background: rgba(232,238,252,.10);
+  border-color: rgba(232,238,252,.2);
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+@media (max-width: 640px) {
+  .nav-toggle { display: block; }
+  .navlinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    right: 20px;
+    background: rgba(11,15,23,.96);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px;
+    gap: 8px;
+    z-index: 100;
+    min-width: 160px;
+  }
+  .navlinks.open { display: flex; }
+}
+:root[data-theme="light"] .navlinks {
+  background: rgba(240,244,252,.98);
+}
+
+/* Scroll-triggered card animation */
+.card {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Experience page */
+.experience-item {
+  padding: 20px;
+  margin-top: 16px;
+  position: relative;
+  border-left: 3px solid rgba(110,168,254,.3);
+  padding-left: 20px;
+}
+.experience-item:hover {
+  border-left-color: rgba(110,168,254,.6);
+}
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.experience-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+.experience-date {
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.experience-location {
+  display: block;
+  margin-bottom: 12px;
+}
+
 /* Screen reader only content */
 .sr-only {
   position: absolute;

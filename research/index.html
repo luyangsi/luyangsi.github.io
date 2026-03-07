@@ -16,6 +16,7 @@
       <strong>Luyang Si</strong>
       <span class="small">Data Engineering • Data Quality • NLP</span>
     </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
       <a class="btn pill" href="../">Home</a>
       <a class="btn pill" href="../projects/">Projects</a>
@@ -23,6 +24,7 @@
       <a class="btn pill" href="../experience/">Experience</a>
       <a class="btn pill" href="../contact/">Contact</a>
       <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      <button class="theme-toggle" aria-label="Toggle theme">☀</button>
     </nav>
   </div>
 </header>
@@ -33,7 +35,7 @@
     <p>Selected academic outputs: manuscript, datasets, and presentations.</p>
 
     <div class="card" style="padding: 16px; margin-top: 14px;">
-      <h2>Manuscript</h2>
+      <h2>Manuscript <span class="badge" style="font-size: 11px; vertical-align: middle;">In preparation</span></h2>
       <p class="small">Tracking the Data Quality Landscape of Retracted Papers: Flag Usage in Titles and Changes in DOI Retraction Status.</p>
       <p class="small">Authors: Luyang Si; Malik Oyewale Salami; Jodi Schneider</p>
     </div>
@@ -41,22 +43,36 @@
     <div class="card" style="padding: 16px; margin-top: 14px;">
       <h2>Datasets (DOI)</h2>
       <ul class="list">
-        <li><a href="https://doi.org/10.13012/B2IDB-5333456_V1" target="_blank" rel="noreferrer">10.13012/B2IDB-5333456_V1</a></li>
-        <li><a href="https://doi.org/10.13012/B2IDB-2907908_V1" target="_blank" rel="noreferrer">10.13012/B2IDB-2907908_V1</a></li>
+        <li>
+          <a href="https://doi.org/10.13012/B2IDB-5333456_V1" target="_blank" rel="noreferrer">10.13012/B2IDB-5333456_V1</a>
+          <span class="small" style="display:block; margin-top: 2px;">Annotated dataset of retracted paper DOIs with Crossref retraction flag status and title keyword extraction.</span>
+        </li>
+        <li>
+          <a href="https://doi.org/10.13012/B2IDB-2907908_V1" target="_blank" rel="noreferrer">10.13012/B2IDB-2907908_V1</a>
+          <span class="small" style="display:block; margin-top: 2px;">Longitudinal snapshot dataset tracking DOI retraction status changes over time across 208 records.</span>
+        </li>
       </ul>
     </div>
 
     <div class="card" style="padding: 16px; margin-top: 14px;">
       <h2>Presentations</h2>
       <ul class="list">
-        <li>2024 iSchool Research Showcase — Distinguishing Retracted Publications from Retraction Notices in Crossref Data.
-          <a href="https://hdl.handle.net/2142/125134" target="_blank" rel="noreferrer">hdl:2142/125134</a></li>
-        <li>2025 Undergraduate Research Symposium — Psychological Motivation Factors that Enhance Confidence and Participation in Sports Among Students with Poor Physical Fitness.
-          <a href="https://hdl.handle.net/2142/128150" target="_blank" rel="noreferrer">hdl:2142/128150</a></li>
-        <li>2025 Undergraduate Research Symposium — Analyzing the Consistency of Retraction Phrases Among Different Journals in Crossref Data.
-          <a href="https://hdl.handle.net/2142/129058" target="_blank" rel="noreferrer">hdl:2142/129058</a></li>
-        <li>2025 STEM Career Exploration and Symposium — Data Quality Assessment of Retracted Papers: Patterns and Retraction Status Shifts in Titles.
-          <a href="https://hdl.handle.net/2142/129058" target="_blank" rel="noreferrer">hdl:2142/129058</a> (same handle)</li>
+        <li>
+          <strong>2024 iSchool Research Showcase</strong> — Distinguishing Retracted Publications from Retraction Notices in Crossref Data.
+          <a href="https://hdl.handle.net/2142/125134" target="_blank" rel="noreferrer">hdl:2142/125134</a>
+        </li>
+        <li>
+          <strong>2025 Undergraduate Research Symposium</strong> — Psychological Motivation Factors that Enhance Confidence and Participation in Sports Among Students with Poor Physical Fitness.
+          <a href="https://hdl.handle.net/2142/128150" target="_blank" rel="noreferrer">hdl:2142/128150</a>
+        </li>
+        <li>
+          <strong>2025 Undergraduate Research Symposium</strong> — Analyzing the Consistency of Retraction Phrases Among Different Journals in Crossref Data.
+          <a href="https://hdl.handle.net/2142/129058" target="_blank" rel="noreferrer">hdl:2142/129058</a>
+        </li>
+        <li>
+          <strong>2025 STEM Career Exploration and Symposium</strong> — Data Quality Assessment of Retracted Papers: Patterns and Retraction Status Shifts in Titles.
+          <span class="small" style="color: var(--muted);">(Handle TBD)</span>
+        </li>
       </ul>
     </div>
   </section>
@@ -76,6 +92,7 @@
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="../assets/main.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 — Page Not Found | Luyang Si</title>
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="brand" href="/">
+      <strong>Luyang Si</strong>
+      <span class="small">Data Engineering • Data Quality • NLP</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="navlinks">
+      <a class="btn pill" href="/">Home</a>
+      <a class="btn pill" href="/projects/">Projects</a>
+      <a class="btn pill" href="/research/">Research</a>
+      <a class="btn pill" href="/experience/">Experience</a>
+      <a class="btn pill" href="/contact/">Contact</a>
+      <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      <button class="theme-toggle" aria-label="Toggle theme">☀</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section" style="text-align: center; padding-top: 60px;">
+    <div class="card" style="padding: 48px 32px; max-width: 480px; margin: 0 auto;">
+      <div style="font-size: 64px; margin-bottom: 16px; font-weight: 800; color: var(--accent);">404</div>
+      <h1 style="margin-bottom: 12px;">Page not found</h1>
+      <p>This page doesn't exist or has moved. Head back to a known location.</p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+        <a class="btn primary" href="/">Home</a>
+        <a class="btn" href="/projects/">Projects</a>
+        <a class="btn" href="/contact/">Contact</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex; flex-direction:column; gap:8px;">
+    <div class="small">© <span id="y"></span> Luyang Si. Hosted on GitHub Pages.</div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="/assets/main.js"></script>
+
+</body>
+</html>
