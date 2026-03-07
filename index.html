@@ -62,7 +62,9 @@
   <section class="section">
     <div class="grid cols2" style="align-items:start;">
       <div>
-        <h1>Hi, I'm Luyang Si</h1>
+        <div class="terminal-prompt">~/portfolio $</div>
+        <h1 class="cursor-blink">Hi, I'm Luyang Si</h1>
+        <p class="hero-role">// data-engineer · data-quality · nlp</p>
         <p style="font-size:16px;">I build production data pipelines, enforce data quality at scale, and apply NLP to real research problems.</p>
 
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin: 16px 0 10px 0;">
@@ -74,39 +76,33 @@
         </div>
 
         <div class="card proof" style="margin-top: 12px;">
-          <div><b>Highlight 1:</b> Built a dataset recommender across 25+ sources; reduced discovery time from ~2 hours to &lt;5 minutes.</div>
-          <div><b>Highlight 2:</b> Implemented rerun-safe incremental ingestion via watermarking with auditing and data quality checks.</div>
-          <div><b>Highlight 3:</b> Conducted Crossref retraction metadata analysis and documented indexing drift affecting research integrity.</div>
+          <div class="proof-line"><span class="prompt">$</span><span>Built a dataset recommender across 25+ sources — discovery time <strong>2 hrs → &lt;5 min</strong>.</span></div>
+          <div class="proof-line"><span class="prompt">$</span><span>Implemented rerun-safe incremental ingestion via <strong>watermarking</strong> with full audit trail.</span></div>
+          <div class="proof-line"><span class="prompt">$</span><span>Crossref retraction analysis — documented <strong>indexing drift</strong> across 208 DOIs affecting research integrity.</span></div>
         </div>
       </div>
 
-      <div class="card" style="padding:16px;">
-        <div style="display:flex; align-items:center; gap:14px; margin-bottom: 12px;">
-          <img class="avatar" src="images/profile.png" alt="Profile photo of Luyang Si" width="72" height="72" />
-          <div>
-            <div style="font-weight:800; font-size: 16px; line-height:1.2;">Luyang Si</div>
-            <div class="small">Champaign, IL · Data Engineering · Data Quality · NLP</div>
-          </div>
-        </div>
+      <div class="card" style="padding:24px; text-align:center;">
+        <img class="avatar-lg" src="images/profile.png" alt="Profile photo of Luyang Si" />
+        <div style="font-weight:800; font-size: 18px; line-height:1.2;">Luyang Si</div>
+        <div class="mono small" style="color: var(--accent); margin: 4px 0 6px 0;">data-engineer && analyst</div>
+        <div class="small" style="margin-bottom: 16px;">Champaign, IL</div>
 
-        <h2 style="margin-bottom:10px;">Quick profile</h2>
-        <p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom: 16px;">
           <span class="badge">Python</span>
           <span class="badge">SQL</span>
           <span class="badge">Azure SQL</span>
           <span class="badge">Data Quality</span>
           <span class="badge">NLP</span>
-        </p>
+        </div>
         <hr />
-        <h3 style="margin-bottom:10px;">Core strengths</h3>
-        <ul class="list">
-          <li><strong>Pipeline engineering:</strong> I design incremental, rerun-safe loads using watermarking — so reruns are cheap and audits are automatic.</li>
-          <li><strong>Analytical workflows:</strong> I write reproducible statistical analyses (OLS, t-tests) with publication-ready visuals.</li>
-          <li><strong>NLP &amp; embeddings:</strong> I apply multilingual sentence embeddings to surface quality issues across language boundaries.</li>
+        <ul class="list" style="text-align:left;">
+          <li><strong>Pipeline engineering:</strong> Incremental, rerun-safe loads with watermarking and automatic auditing.</li>
+          <li><strong>Analytical workflows:</strong> Reproducible statistical analyses (OLS, t-tests) with publication-ready visuals.</li>
+          <li><strong>NLP &amp; embeddings:</strong> Multilingual sentence embeddings for cross-language quality detection.</li>
         </ul>
         <hr />
-        <h3 style="margin-bottom:10px;">Contact</h3>
-        <p class="small">
+        <p class="small" style="margin:0;">
           <span class="mono">ls36@illinois.edu</span> ·
           <a href="https://www.linkedin.com/in/luyang-si-409468254/" target="_blank" rel="noreferrer">LinkedIn</a> ·
           <a href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
