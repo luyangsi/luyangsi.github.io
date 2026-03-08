@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Semiconductors Data Platform | Luyang Si</title>
+  <meta name="description" content="End-to-end data engineering platform simulating semiconductor fab operations: medallion architecture, 15+ data quality validation rules, yield monitoring, and equipment health analytics." />
+  <link rel="icon" href="../favicon.svg" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="brand" href="../">
+      <strong>Luyang Si</strong>
+      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="navlinks">
+      <a class="btn pill" href="../">Home</a>
+      <a class="btn pill primary" href="../projects/">Projects</a>
+      <a class="btn pill" href="../research/">Research</a>
+      <a class="btn pill" href="../experience/">Experience</a>
+      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      <button class="theme-toggle" aria-label="Toggle theme">☀</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section">
+    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);">← All projects</a></p>
+    <h1>Semiconductors Data Platform</h1>
+    <p>An end-to-end data engineering platform simulating semiconductor fab operations — featuring a 4-layer medallion architecture, a custom YAML-based data quality rule engine with 15+ manufacturing-specific validation checks, and analytics for yield monitoring and equipment health tracking.</p>
+
+    <hr />
+
+    <h2>Problem</h2>
+    <p>Semiconductor manufacturing generates high-volume operational data across wafers, batches, equipment, and process steps. Without a structured pipeline and quality framework, monitoring yield degradation, detecting equipment anomalies, and tracing root causes becomes intractable. The challenge is building a production-grade platform that enforces referential integrity, validates process sequences, and surfaces health metrics for operational decision-making.</p>
+
+    <h2>Context and constraints</h2>
+    <div class="card" style="padding: 12px 14px;">
+      <ul class="list">
+        <li>Domain: Semiconductor fab operations (simulated data mirroring TSMC / Lam Research patterns)</li>
+        <li>Architecture: 4-layer medallion — raw → staging → data quality → curated</li>
+        <li>Requirement: Incremental processing with watermark-based change tracking; idempotent pipeline runs</li>
+        <li>Quality requirement: 15+ domain-specific validation rules enforced before promotion to curated layer</li>
+        <li>Analytics requirement: Yield monitoring by equipment and process step; equipment health (uptime, MTBF, alarm frequency)</li>
+      </ul>
+    </div>
+
+    <h2 style="margin-top:18px;">Approach</h2>
+    <ul class="list">
+      <li>Implemented 4-layer medallion design: raw (timestamp-partitioned), staging (schema standardization, type casting), data quality validation, and curated (star schema with fact and dimension tables)</li>
+      <li>Built a custom YAML-based rule engine for manufacturing-specific quality checks: referential integrity (wafer → batch → equipment), process sequence verification (lithography → etch → test ordering), temporal consistency, and range validation on test metrics</li>
+      <li>Implemented watermark-based incremental ingestion to process only new/changed records, with idempotent re-run safety and graceful late-arriving data handling</li>
+      <li>Designed curated layer as a star schema optimized for yield and equipment health analytics queries</li>
+    </ul>
+
+    <h2 style="margin-top:18px;">Architecture</h2>
+    <pre class="mermaid">
+flowchart TB
+  A[Fab Simulation Data] --> B[Raw Layer\ntimestamp-partitioned]
+  B --> C[Staging Layer\nschema standardization + type casting]
+  C --> D[DQ Validation Layer\n15+ rule engine checks]
+  D --> E[Curated Layer\nstar schema — fact + dimension tables]
+  E --> F1[Yield Monitoring\nby equipment & process step]
+  E --> F2[Equipment Health\nuptime · MTBF · alarm frequency]
+  E --> F3[Wafer Traceability\nroot cause analysis]
+  D --> G[Quality Report\nfailed checks + rule details]
+    </pre>
+
+    <h2 style="margin-top:18px;">Data quality checks implemented</h2>
+    <div class="card" style="padding: 12px 14px;">
+      <ul class="list">
+        <li><strong>Referential integrity:</strong> Every wafer must have a valid batch_id; every batch must map to a valid equipment record</li>
+        <li><strong>Process sequence validation:</strong> Manufacturing steps must follow correct ordering (e.g., lithography → etch → deposition → test); out-of-sequence records are flagged</li>
+        <li><strong>Range validation:</strong> Test metrics (yield rate, thickness, resistivity) validated against domain-specific acceptable ranges</li>
+        <li><strong>Temporal consistency:</strong> Prevents anomalies where process end timestamps precede start timestamps or overlap across equipment</li>
+        <li><strong>Completeness checks:</strong> Required fields validated across wafer, batch, and equipment dimensions</li>
+      </ul>
+    </div>
+
+    <h2 style="margin-top:18px;">Results and impact</h2>
+    <div class="notice">
+      Fully automated monitoring pipeline with rerun-safe incremental ingestion. DQ rule engine catches referential, sequential, and range violations before data reaches analytics layer — analogous to abuse/anomaly detection in production systems. Curated star schema enables yield trend analysis and equipment health scoring for operational decision-making.
+    </div>
+
+    <h2 style="margin-top:18px;">Tech stack</h2>
+    <p>Python 3.9+, pandas, NumPy, YAML-based rule engine, CSV/Parquet storage, pytest, star schema design.</p>
+
+    <h2 style="margin-top:18px;">Links</h2>
+    <ul class="list">
+      <li>Repo: <a href="https://github.com/luyangsi/semiconductors_data_platform" target="_blank" rel="noreferrer">https://github.com/luyangsi/semiconductors_data_platform</a></li>
+      <li>Projects index: <a href="./">/projects/</a></li>
+    </ul>
+
+    <h2 style="margin-top:18px;">What I'd improve next</h2>
+    <p>Replace CSV/Parquet storage with a columnar data warehouse (e.g., Azure Synapse or DuckDB) to enable real-time dashboard queries; add alerting on DQ rule failure rates crossing threshold, and integrate MTBF anomaly detection with statistical control charts.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex; flex-direction:column; gap:8px;">
+    <div class="small">© <span id="y"></span> Luyang Si. Hosted on GitHub Pages.</div>
+    <div class="small">
+      Links:
+      <a href="https://www.linkedin.com/in/luyang-si-409468254/" target="_blank" rel="noreferrer">LinkedIn</a>
+      ·
+      <a href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      ·
+      <a href="mailto:ls36@illinois.edu">ls36@illinois.edu</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="../assets/main.js"></script>
+
+</body>
+</html>
