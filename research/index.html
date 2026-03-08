@@ -14,7 +14,7 @@
   <div class="container navbar">
     <a class="brand" href="../">
       <strong>Luyang Si</strong>
-      <span class="small">Data Engineering • Data Quality • NLP</span>
+      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
@@ -32,46 +32,103 @@
 <main class="container">
   <section class="section">
     <h1>Research</h1>
-    <p>Selected academic outputs: manuscript, datasets, and presentations.</p>
+    <p>Academic research projects, publications, datasets, and conference presentations.</p>
+
+    <h2 style="margin-top: 28px; margin-bottom: 14px;">Research Projects</h2>
 
     <div class="card" style="padding: 16px; margin-top: 14px;">
-      <h2>Manuscript <span class="badge" style="font-size: 11px; vertical-align: middle;">In preparation</span></h2>
-      <p class="small">Tracking the Data Quality Landscape of Retracted Papers: Flag Usage in Titles and Changes in DOI Retraction Status.</p>
-      <p class="small">Authors: Luyang Si; Malik Oyewale Salami; Jodi Schneider</p>
+      <h3>Tracking the Data Quality Landscape of Retracted Scholarly Materials</h3>
+      <div class="small" style="color: var(--muted); margin-bottom: 8px;">Aug 2024 – Sep 2025 · Supervised by Prof. Jodi Schneider · iSchool, UIUC</div>
+      <ul class="list">
+        <li>Investigated the scope of wrong and inconsistent indexing in Crossref data, examining how reliably title keywords can determine whether a DOI is truly retracted.</li>
+        <li>Identified 208 DOIs marked retracted in April 2023 but no longer flagged as retracted in July 2024, exposing systemic indexing drift with downstream implications for research integrity.</li>
+        <li>Developed a real-time automated pipeline to collect DOI metadata statistics, extract title keywords, and compare them against flags defined in the retraction protocol.</li>
+        <li>Annotated and cleaned the dataset; analyzed consistency of retraction flag usage across different journals using statistical and text-based methods.</li>
+        <li>Drafted full manuscript, dataset documentation, pipeline documentation, and materials for three conference presentations and posters.</li>
+        <li>Co-authored two published datasets deposited at the University of Illinois Urbana-Champaign repository.</li>
+      </ul>
     </div>
 
     <div class="card" style="padding: 16px; margin-top: 14px;">
-      <h2>Datasets (DOI)</h2>
+      <h3>Psychological Motivation Factors Enhancing Confidence and Participation in Sports Among Students with Poor Physical Fitness</h3>
+      <div class="small" style="color: var(--muted); margin-bottom: 8px;">Jun 2024 – Aug 2025 · Supervised by Prof. Peter Darch · Lead Researcher · iSchool, UIUC</div>
+      <ul class="list">
+        <li>Led a three-person undergraduate research team investigating psychological factors (motivation, self-efficacy, social environment) that encourage students with low physical fitness to participate in physical activity.</li>
+        <li>Designed full research plan including study scope, hypotheses, participant recruitment strategy, and timeline.</li>
+        <li>Developed survey questionnaires, data deposit workflows, analysis pipeline code, and the final technical report.</li>
+        <li>Presented findings at the 2025 Undergraduate Research Symposium (URS), University of Illinois Urbana-Champaign.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="padding: 16px; margin-top: 14px;">
+      <h3>Co-designing mHealth Applications to Empower Cancer Survivors</h3>
+      <div class="small" style="color: var(--muted); margin-bottom: 8px;">Sep 2024 – Dec 2024 · Supervised by Prof. Rachel Adler · iSchool, UIUC</div>
+      <ul class="list">
+        <li>Investigated the integration of generative AI into mHealth applications for the aging population, with a focus on promoting healthier lifestyles among cancer survivors.</li>
+        <li>Developed a Flutter mobile application providing AI-powered health suggestions; designed the full user interface based on iterative user research with older adult participants.</li>
+        <li>Fine-tuned open-source LLaMA language models to improve the quality, safety, and relevance of AI-generated healthcare guidance for elderly users.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="padding: 16px; margin-top: 14px;">
+      <h3>Demand Forecasting for Inventory Management System Optimization</h3>
+      <div class="small" style="color: var(--muted); margin-bottom: 8px;">Aug 2024 – Dec 2024 · Supervised by Prof. Yoo-Seong Song · Client: National Food Distributor · iSchool, UIUC</div>
+      <ul class="list">
+        <li>Optimized stock management systems for a national food distributor by developing an inventory demand forecasting model using Random Forest, trained on historical sales data combined with macroeconomic external factors (stock market performance, GDP, import/export data).</li>
+        <li>Translated model outputs into actionable operational recommendations for supply chain stakeholders; communicated findings in accessible executive briefings to client leadership.</li>
+      </ul>
+    </div>
+
+    <h2 style="margin-top: 32px; margin-bottom: 14px;">Publications &amp; Datasets</h2>
+
+    <div class="card" style="padding: 16px; margin-top: 14px;">
+      <h3>Manuscript <span class="badge" style="font-size: 11px; vertical-align: middle;">Under Review</span></h3>
+      <p class="small">Si, L.; Salami, M. O.; Schneider, J. (2025). <em>Tracking the Data Quality Landscape of Retracted Papers: Flag Usage in Titles and Changes in DOI Retraction Status.</em> University of Illinois Urbana-Champaign.</p>
+    </div>
+
+    <div class="card" style="padding: 16px; margin-top: 14px;">
+      <h3>Datasets</h3>
       <ul class="list">
         <li>
-          <a href="https://doi.org/10.13012/B2IDB-5333456_V1" target="_blank" rel="noreferrer">10.13012/B2IDB-5333456_V1</a>
-          <span class="small" style="display:block; margin-top: 2px;">Annotated dataset of retracted paper DOIs with Crossref retraction flag status and title keyword extraction.</span>
+          Si, L.; Salami, M. O.; Schneider, J. (2025). Dataset tracking DOIs marked as retracted in Crossref as of April 2023 but no longer marked as retracted as of July 2024. University of Illinois Urbana-Champaign.
+          <a href="https://doi.org/10.13012/B2IDB-5333456_V1" target="_blank" rel="noreferrer">doi:10.13012/B2IDB-5333456_V1</a>
         </li>
         <li>
-          <a href="https://doi.org/10.13012/B2IDB-2907908_V1" target="_blank" rel="noreferrer">10.13012/B2IDB-2907908_V1</a>
-          <span class="small" style="display:block; margin-top: 2px;">Longitudinal snapshot dataset tracking DOI retraction status changes over time across 208 records.</span>
+          Si, L.; Salami, M. O.; Schneider, J. (2025). Dataset on tracking the data quality landscape of retracted papers: Flag usage in titles and changes in DOI retraction status. University of Illinois Urbana-Champaign.
+          <a href="https://doi.org/10.13012/B2IDB-2907908_V1" target="_blank" rel="noreferrer">doi:10.13012/B2IDB-2907908_V1</a>
+        </li>
+      </ul>
+    </div>
+
+    <h2 style="margin-top: 32px; margin-bottom: 14px;">Conference Presentations &amp; Posters</h2>
+
+    <div class="card" style="padding: 16px; margin-top: 14px;">
+      <h3>2025</h3>
+      <ul class="list">
+        <li>
+          <strong>2025 STEM Career Exploration and Symposium, UIUC</strong> · Jul 2025<br/>
+          <span class="small">Data Quality Assessment of Retracted Papers: Patterns and Retraction Status Shifts in Titles</span>
+        </li>
+        <li>
+          <strong>2025 Undergraduate Research Symposium (URS), UIUC</strong> · Apr 2025<br/>
+          <span class="small">Analyzing the Consistency of Retraction Phrases Among Different Journals in Crossref Data</span>
+          · <a href="https://hdl.handle.net/2142/129058" target="_blank" rel="noreferrer">hdl:2142/129058</a>
+        </li>
+        <li>
+          <strong>2025 Undergraduate Research Symposium (URS), UIUC</strong> · Apr 2025<br/>
+          <span class="small">Psychological Motivation Factors that Enhance Confidence and Participation in Sports Among Students with Poor Physical Fitness</span>
+          · <a href="https://hdl.handle.net/2142/128150" target="_blank" rel="noreferrer">hdl:2142/128150</a>
         </li>
       </ul>
     </div>
 
     <div class="card" style="padding: 16px; margin-top: 14px;">
-      <h2>Presentations</h2>
+      <h3>2024</h3>
       <ul class="list">
         <li>
-          <strong>2024 iSchool Research Showcase</strong> — Distinguishing Retracted Publications from Retraction Notices in Crossref Data.
-          <a href="https://hdl.handle.net/2142/125134" target="_blank" rel="noreferrer">hdl:2142/125134</a>
-        </li>
-        <li>
-          <strong>2025 Undergraduate Research Symposium</strong> — Psychological Motivation Factors that Enhance Confidence and Participation in Sports Among Students with Poor Physical Fitness.
-          <a href="https://hdl.handle.net/2142/128150" target="_blank" rel="noreferrer">hdl:2142/128150</a>
-        </li>
-        <li>
-          <strong>2025 Undergraduate Research Symposium</strong> — Analyzing the Consistency of Retraction Phrases Among Different Journals in Crossref Data.
-          <a href="https://hdl.handle.net/2142/129058" target="_blank" rel="noreferrer">hdl:2142/129058</a>
-        </li>
-        <li>
-          <strong>2025 STEM Career Exploration and Symposium</strong> — Data Quality Assessment of Retracted Papers: Patterns and Retraction Status Shifts in Titles.
-          <span class="small" style="color: var(--muted);">(Handle TBD)</span>
+          <strong>2024 iSchool Research Showcase, UIUC</strong> · Nov 2024<br/>
+          <span class="small">Distinguishing Retracted Publications from Retraction Notices in Crossref Data</span>
+          · <a href="https://hdl.handle.net/2142/125134" target="_blank" rel="noreferrer">hdl:2142/125134</a>
         </li>
       </ul>
     </div>
