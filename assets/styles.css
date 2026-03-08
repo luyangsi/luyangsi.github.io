@@ -142,8 +142,8 @@ hr{
 /* Large profile avatar for hero card */
 .avatar-lg {
   width: 160px;
-  height: 160px;
-  border-radius: 50%;
+  height: 200px;
+  border-radius: 12px;
   border: 2px solid rgba(110,168,254,.25);
   object-fit: cover;
   object-position: top center;
