@@ -184,30 +184,38 @@ hr{
   opacity: 0.7;
 }
 
-/* Axis-style timeline for experience page */
+/* Alternating center-axis timeline */
 .timeline {
   position: relative;
-  padding-left: 60px;
   margin-top: 32px;
 }
 .timeline::before {
   content: '';
   position: absolute;
-  left: 18px;
-  top: 10px;
-  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom, var(--accent) 0%, rgba(110,168,254,.2) 100%);
+  background: linear-gradient(to bottom, var(--accent), rgba(110,168,254,.15));
   border-radius: 2px;
 }
 .timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: calc(50% + 28px);
   position: relative;
   margin-bottom: 24px;
+}
+.timeline-item:nth-child(even) {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: calc(50% + 28px);
 }
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -52px;
+  left: calc(50% - 11px);
   top: 16px;
   width: 22px;
   height: 22px;
@@ -228,6 +236,7 @@ hr{
 }
 .timeline-body {
   padding-bottom: 4px;
+  width: 100%;
 }
 .timeline-body h2 {
   font-size: 18px;
@@ -244,10 +253,15 @@ hr{
   color: var(--muted);
   margin-bottom: 12px;
 }
-@media (max-width: 600px) {
-  .timeline { padding-left: 36px; }
-  .timeline::before { left: 10px; }
-  .timeline-item::before { left: -32px; width: 16px; height: 16px; top: 18px; }
+@media (max-width: 680px) {
+  .timeline::before { left: 18px; transform: none; }
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-left: 52px;
+    padding-right: 0;
+  }
+  .timeline-item::before { left: 7px; }
 }
 
 code, pre{font-family: var(--mono);}
