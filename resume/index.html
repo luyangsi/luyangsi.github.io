@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resume | Luyang Si</title>
+  <meta name="description" content="Luyang Si's resume — data analyst and researcher focused on analytics pipelines, business intelligence, and applied NLP." />
+  <link rel="icon" href="../favicon.svg" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="brand" href="../">
+      <strong>Luyang Si</strong>
+      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="navlinks">
+      <a class="btn pill" href="../">Home</a>
+      <a class="btn pill" href="../projects/">Projects</a>
+      <a class="btn pill" href="../research/">Research</a>
+      <a class="btn pill" href="../experience/">Experience</a>
+      <a class="btn pill" href="../blog/">Blog</a>
+      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      <button class="theme-toggle" aria-label="Toggle theme">☀</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section" style="text-align: center; padding: 60px 20px;">
+    <h1>Resume</h1>
+    <p style="margin: 20px 0; font-size: 16px;">Download my resume below or redirect in 3 seconds...</p>
+    
+    <div style="margin: 30px 0;">
+      <a class="btn primary" href="Luyang_Si_Tech_Resume.pdf" download style="font-size: 18px; padding: 12px 24px;">
+        📄 Download Resume (PDF)
+      </a>
+    </div>
+
+    <p class="small" style="color: var(--muted); margin-top: 30px;">
+      If the file doesn't download automatically, <a href="Luyang_Si_Tech_Resume.pdf" target="_blank" rel="noreferrer">click here to view in browser</a>.
+    </p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center;">
+    <span style="color:var(--muted);font-size:13px;">© <span id="yr"></span> Luyang Si</span>
+    <nav style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="../" style="color:var(--muted);font-size:13px;text-decoration:none;">Home</a>
+      <a href="../blog/" style="color:var(--muted);font-size:13px;text-decoration:none;">Blog</a>
+      <a href="../contact/" style="color:var(--muted);font-size:13px;text-decoration:none;">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+  // Auto-redirect after 3 seconds or let user click
+  setTimeout(function() {
+    window.location.href = 'Luyang_Si_Tech_Resume.pdf';
+  }, 3000);
+</script>
+</body>
+</html>
