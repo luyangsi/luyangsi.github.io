@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog | Luyang Si</title>
+  <meta name="description" content="Thoughts on data engineering, analytics, research, and the tools I use." />
+  <link rel="icon" href="../favicon.svg" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="brand" href="../">
+      <strong>Luyang Si</strong>
+      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="navlinks">
+      <a class="btn pill" href="../">Home</a>
+      <a class="btn pill" href="../projects/">Projects</a>
+      <a class="btn pill" href="../research/">Research</a>
+      <a class="btn pill" href="../experience/">Experience</a>
+      <a class="btn pill primary" href="../blog/">Blog</a>
+      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      <button class="theme-toggle" aria-label="Toggle theme">☀</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h1>Blog</h1>
+    <p>Thoughts on data engineering, analytics, research methods, and tools I find useful.</p>
+
+    <div class="blog-list">
+
+      <!-- =====================================================
+           HOW TO ADD A NEW POST:
+           1. Copy the block below (from "article" to "/article")
+           2. Paste it above this comment
+           3. Update: href, date, title, tags, and description
+           4. Create the corresponding HTML file in this folder
+           ===================================================== -->
+
+      <article class="card blog-card">
+        <a href="../blog/getting-started.html" class="blog-card-link">
+          <div class="blog-meta">
+            <time class="blog-date" datetime="2026-03-08">Mar 8, 2026</time>
+            <div class="blog-tags">
+              <span class="badge">Data Engineering</span>
+              <span class="badge">Writing</span>
+            </div>
+          </div>
+          <h2 class="blog-title">Getting Started: How I Set Up This Blog</h2>
+          <p class="blog-excerpt">A quick walkthrough of this static blog setup and how to add new posts — no build tools required.</p>
+          <span class="blog-read-more">Read →</span>
+        </a>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center;">
+    <span style="color:var(--muted);font-size:13px;">© <span id="yr"></span> Luyang Si</span>
+    <nav style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="../" style="color:var(--muted);font-size:13px;text-decoration:none;">Home</a>
+      <a href="../projects/" style="color:var(--muted);font-size:13px;text-decoration:none;">Projects</a>
+      <a href="../contact/" style="color:var(--muted);font-size:13px;text-decoration:none;">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
