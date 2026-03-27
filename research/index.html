@@ -38,6 +38,39 @@
     <h2 style="margin-top: 28px; margin-bottom: 14px;" data-i18n="research.proj.h2">Research Projects</h2>
 
     <div class="card" style="padding: 16px; margin-top: 14px;">
+      <h3 data-i18n="research.alpha.title">Alpha Research Study: Behavioral Decision Analysis via NLP Pipeline</h3>
+      <div class="small" style="color: var(--muted); margin-bottom: 8px;">Jan 2026 – Present · RtB · Financial Research Analyst &nbsp;<span class="badge" style="font-size: 11px; vertical-align: middle;" data-i18n="research.alpha.badge">Alpha · Ongoing</span></div>
+      <p class="small" style="margin: 0 0 12px 0;" data-i18n="research.alpha.descriptor">Behavioral interview data processed through a multi-layer NLP pipeline to extract decision frameworks, calibration failure modes, and intervention hypotheses.</p>
+
+      <h4 style="margin: 12px 0 5px 0; font-size: 13px;" data-i18n="research.alpha.ov.h4">Overview</h4>
+      <p class="small" style="margin: 0 0 8px 0;" data-i18n="research.alpha.ov.p">An Alpha-stage behavioral finance study combining structured interviews with an automated NLP analysis pipeline. Four participants completed interviews covering investment strategy, risk tolerance, calibration tasks, and life planning. The pipeline converts raw recordings into structured decision signals, enabling systematic cross-participant comparison of where financial reasoning breaks down and why.</p>
+
+      <h4 style="margin: 12px 0 5px 0; font-size: 13px;" data-i18n="research.alpha.rq.h4">Research Question</h4>
+      <p class="small" style="margin: 0 0 8px 0;" data-i18n="research.alpha.rq.p">What decision frameworks do individuals apply under financial uncertainty, and at what point do those frameworks fail?</p>
+
+      <h4 style="margin: 12px 0 5px 0; font-size: 13px;" data-i18n="research.alpha.meth.h4">Methods</h4>
+      <ul class="list">
+        <li data-i18n="research.alpha.meth.l1" data-i18n-mode="html"><strong>Transcription &amp; diarization</strong> — Raw recordings (.mp4) processed via AssemblyAI API with speaker diarization; output converted to VTT format</li>
+        <li data-i18n="research.alpha.meth.l2" data-i18n-mode="html"><strong>Three-pass filtering</strong> — Pass 1 removes calibration task noise; Pass 2 applies a decision signal gate; Pass 3 assigns sentences to 8 decision framework clusters via keyword matching (321 raw sentences → 38 high-signal sentences, 11.8% retention)</li>
+        <li data-i18n="research.alpha.meth.l3" data-i18n-mode="html"><strong>NLP layer</strong> — LDA topic modeling (gensim, 8 topics) runs in parallel with keyword clustering for cross-validation; BERT zero-shot classification (facebook/bart-large-mnli) scores each sentence against 5 behavioral signals; precision/recall evaluated against keyword pseudo-labels</li>
+        <li data-i18n="research.alpha.meth.l4" data-i18n-mode="html"><strong>Structured LLM analysis</strong> — Claude API runs three sequential phases: Error Mapping (initial condition → expected outcome → observed outcome → divergence type), Behavioral Signal extraction (3–5 measurable real-time indicators per sentence), and Intervention Hypothesis generation</li>
+      </ul>
+
+      <h4 style="margin: 12px 0 5px 0; font-size: 13px;" data-i18n="research.alpha.find.h4">Key Findings</h4>
+      <ul class="list">
+        <li data-i18n="research.alpha.find.l1" data-i18n-mode="html"><strong>Calibration is the universal failure mode</strong> — All 4 participants showed confidence miscalibration, but through distinct mechanisms: streak-following, pattern attribution, and boredom-driven escalation. It is the only cluster with 4/4 participant representation.</li>
+        <li data-i18n="research.alpha.find.l2" data-i18n-mode="html"><strong>Correct framework, absent trigger</strong> — One participant independently derived a valid $2M/HYSA passive income threshold but had no activation condition attached to it. The framework was structurally sound; operationalization was missing entirely.</li>
+        <li data-i18n="research.alpha.find.l3" data-i18n-mode="html"><strong>Education ROI requires a decision-mode gate</strong> — Some participants applied full ROI analysis unprompted; others defaulted to market sentiment and fear. These are categorically different decision modes, not calibration differences. Applying the same intervention to both would be a category error; a classifier gate is required upstream.</li>
+      </ul>
+
+      <h4 style="margin: 12px 0 5px 0; font-size: 13px;" data-i18n="research.alpha.tech.h4">Technical Implementation</h4>
+      <p class="small" style="margin: 0 0 8px 0;" data-i18n="research.alpha.tech.p">Python pipeline using AssemblyAI, gensim LDA, HuggingFace Transformers (facebook/bart-large-mnli), Anthropic Claude API, Google Drive API, and GitHub Actions. Two deployment modes: incremental (triggers on each new upload, processes new transcripts only) and cumulative (biweekly, full dataset reprocessing). Output is a versioned Excel report delivered via automated email to the uploader and pipeline monitors.</p>
+
+      <h4 style="margin: 12px 0 5px 0; font-size: 13px;" data-i18n="research.alpha.status.h4">Status</h4>
+      <p class="small" style="margin: 0;" data-i18n="research.alpha.status.p">Alpha deployment. Pipeline is live and processing data from 4 participants; participant pool is expanding. Analysis framework, automation infrastructure, and reporting pipeline are production-ready.</p>
+    </div>
+
+    <div class="card" style="padding: 16px; margin-top: 14px;">
       <h3 data-i18n="research.crossref.title">Tracking the Data Quality Landscape of Retracted Scholarly Materials</h3>
       <div class="small" style="color: var(--muted); margin-bottom: 8px;">Aug 2024 – Sep 2025 · Supervised by Prof. Jodi Schneider · iSchool, UIUC</div>
       <ul class="list">
