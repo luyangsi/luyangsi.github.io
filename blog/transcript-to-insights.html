@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>From Transcripts to Insights | Luyang Si</title>
+  <meta name="description" content="How I turned raw interview recordings into a fully automated NLP analysis system — and what the data revealed about financial decision-making under uncertainty." />
+  <link rel="icon" href="../favicon.svg" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="brand" href="../">
+      <strong data-i18n="nav.brand.name">Luyang Si</strong>
+      <span class="small" data-i18n="nav.brand.tagline">Data Analytics • Business Intelligence • Behavioral Research</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="navlinks">
+      <a class="btn pill" href="../" data-i18n="nav.home">Home</a>
+      <a class="btn pill" href="../projects/" data-i18n="nav.projects">Projects</a>
+      <a class="btn pill" href="../research/" data-i18n="nav.research">Research</a>
+      <a class="btn pill" href="../experience/" data-i18n="nav.experience">Experience</a>
+      <a class="btn pill primary" href="../blog/" data-i18n="nav.blog">Blog</a>
+      <a class="btn pill" href="../contact/" data-i18n="nav.contact">Contact</a>
+      <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      <button class="theme-toggle" aria-label="Toggle theme">☀</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <article class="blog-post section">
+
+    <p class="small" style="margin-bottom: 4px;">
+      <a href="../blog/" style="color: var(--accent);" data-i18n="blog.pipeline.allposts">← All posts</a>
+    </p>
+
+    <header class="blog-post-header">
+      <div class="blog-meta">
+        <time class="blog-date" datetime="2026-03-27">Mar 27, 2026</time>
+        <div class="blog-tags">
+          <span class="badge">NLP</span>
+          <span class="badge">Decision Science</span>
+          <span class="badge">Data Engineering</span>
+          <span class="badge">Behavioral Research</span>
+        </div>
+      </div>
+      <h1 data-i18n="blog.pipeline.h1">From Transcripts to Insights: Building a Behavioral Decision Research Pipeline</h1>
+      <p class="blog-subtitle" data-i18n="blog.pipeline.subtitle">How I turned raw interview recordings into a fully automated NLP analysis system — and what the data revealed about how people make financial decisions under uncertainty.</p>
+    </header>
+
+    <hr />
+
+    <div class="blog-body">
+
+      <h2 data-i18n="blog.pipeline.prob.h2">The Problem</h2>
+
+      <p data-i18n="blog.pipeline.prob.p1">Most behavioral research stays stuck at the transcript stage.</p>
+
+      <p data-i18n="blog.pipeline.prob.p2">You conduct the interviews, export the recordings, and then spend hours manually reading through transcripts, highlighting quotes, and trying to find patterns across participants. By the time you've read everything, you've lost the thread. By the time you've organized your notes, you've forgotten what made a particular quote interesting in the first place.</p>
+
+      <p data-i18n="blog.pipeline.prob.p3">I was working as a research analyst on a behavioral finance project — the Alpha Research Study — studying how young adults make financial decisions under uncertainty. We had four initial participants, each going through structured interview sessions covering investment strategy, risk tolerance, calibration tasks, and life planning. The sessions were rich. The transcripts were long. And the manual analysis process was not going to scale.</p>
+
+      <p data-i18n="blog.pipeline.prob.p4">So I built a pipeline to do it automatically.</p>
+
+      <h2 data-i18n="blog.pipeline.rq.h2">The Research Question</h2>
+
+      <p data-i18n="blog.pipeline.rq.p1">Before I describe the system, it's worth being clear about what we were actually trying to learn. The underlying hypothesis was this: financial decision-making is not primarily a knowledge problem — it's a behavioral one. People often know the right framework (take risk early, preserve capital later, don't chase streaks) but don't act on it. The gap between knowing and doing is where the interesting research lives.</p>
+
+      <p data-i18n="blog.pipeline.rq.p2">Our goal was to identify decision clusters — recurring patterns of reasoning that appeared across participants — and then use those clusters to design targeted tools that could nudge people toward better decisions at the right moment.</p>
+
+      <p data-i18n="blog.pipeline.rq.p3">That meant the analysis needed to do more than extract themes. It needed to map the structure of each decision: what triggered it, what the rational model predicted, what actually happened, and where the two diverged.</p>
+
+      <h2 data-i18n="blog.pipeline.build.h2">Building the Pipeline</h2>
+
+      <pre class="mermaid">
+flowchart TD
+  A[Raw Recording — .mp4] --> B[Step 1: Transcription + Diarization\nAssemblyAI]
+  B --> C[VTT Format]
+  C --> D[Step 2: Three-Pass Filter\n321 sentences → 38]
+  D --> E[Step 3: NLP Layer]
+  E --> F[LDA Topic Modeling\ngensim — 8 topics]
+  E --> G[BERT Zero-shot\nfacebook/bart-large-mnli]
+  F --> H[Step 4: LLM Analysis\nClaude API — Phase 1–3]
+  G --> H
+  H --> I[Step 5: Versioned Excel Output]
+  I --> J[Email Notification → Analyst + Monitors]
+      </pre>
+
+      <h3 data-i18n="blog.pipeline.s1.h3">Step 1: From Recording to Text</h3>
+
+      <p data-i18n="blog.pipeline.s1.p1">The first challenge was ingestion. Interview sessions were recorded as .mp4 files, not pre-transcribed. I built a transcription module using AssemblyAI, which handles both speech-to-text and speaker diarization — automatically identifying who said what in a two-person conversation.</p>
+
+      <p data-i18n="blog.pipeline.s1.p2">The speaker mapping is done heuristically from the filename: analyst_participant.mp4 tells the system that the first name is the interviewer and the second is the participant. AssemblyAI returns speaker-labeled utterances, which get converted to WebVTT format and passed downstream.</p>
+
+      <h3 data-i18n="blog.pipeline.s2.h3">Step 2: Three-Pass Filtering</h3>
+
+      <p data-i18n="blog.pipeline.s2.p1">Raw transcripts contain a lot of noise — filler phrases, task mechanics, and off-topic exchanges. Rather than trying to classify everything, I designed a three-pass filter:</p>
+
+      <ul class="list">
+        <li data-i18n="blog.pipeline.s2.pass1">Pass 1 removes mechanical calibration-task utterances. The sessions included coin-flip probability tasks, and a lot of the transcript is just "confidence is 60, tails, play again." A regex classifier identifies these by pattern (confidence level reporting, coin-flip mechanics) and removes them from the analysis corpus.</li>
+        <li data-i18n="blog.pipeline.s2.pass2">Pass 2 applies a decision signal gate. Sentences that survived Pass 1 but contain no financial or life-decision vocabulary get flagged as low-signal filler. They're kept for transparency but excluded from clustering.</li>
+        <li data-i18n="blog.pipeline.s2.pass3">Pass 3 assigns the remaining sentences to one of eight decision framework clusters using keyword matching. The clusters were derived from careful reading of the initial four transcripts and represent the major financial decision types we observed: income planning, budget allocation, risk-age wealth threshold, education ROI, life-stage milestone planning, career path under uncertainty, calibration meta-skill, and contrarian signal recognition.</li>
+      </ul>
+
+      <p data-i18n="blog.pipeline.s2.p2">Across 321 raw sentences, this process yielded 38 high-signal clusterable sentences — about 12% of the total. That number sounds low, but it reflects the reality of interview data: most of what gets said is context-setting, not decision reasoning.</p>
+
+      <pre class="mermaid">
+flowchart LR
+  A[321 raw sentences] --> B[Pass 1\nRemove calibration\ntask noise]
+  B --> C[Pass 2\nDecision signal\ngate]
+  C --> D[Pass 3\nKeyword → 8\nclusters]
+  D --> E[38 high-signal\nsentences — 11.8%]
+      </pre>
+
+      <h3 data-i18n="blog.pipeline.s3.h3">Step 3: LDA and BERT</h3>
+
+      <p data-i18n="blog.pipeline.s3.p1">To go beyond keyword matching, I added two NLP layers.</p>
+
+      <p data-i18n="blog.pipeline.s3.lda">LDA (Latent Dirichlet Allocation) is a probabilistic topic modeling technique. Rather than asking "does this sentence contain the word compound?", LDA asks "given the statistical distribution of words across all sentences, what latent topics do these sentences belong to?" I trained an 8-topic LDA model on the substantive sentences and mapped the resulting topics back to the named clusters by comparing top words. The LDA results run in parallel with the keyword results, and a cross-validation field flags any sentence where the two methods disagree — those disagreements are often the most analytically interesting cases.</p>
+
+      <p data-i18n="blog.pipeline.s3.bert">BERT zero-shot classification goes further. Using facebook/bart-large-mnli, I classified each sentence against five behavioral signal descriptions — things like "confidence tracking recent outcomes rather than base rate" or "bet size increasing after a loss." Zero-shot means the model was never trained on our specific data; it uses its pretrained language understanding to assess whether each sentence is semantically consistent with each signal description. The signal scores are then evaluated against keyword-derived pseudo-labels to compute precision and recall metrics, giving us a quantitative measure of how well the rule-based and model-based approaches agree.</p>
+
+      <pre class="mermaid">
+flowchart TB
+  A[38 filtered sentences] --> B[LDA Topic Modeling\ngensim — 8 topics]
+  A --> C[BERT Zero-shot\nfacebook/bart-large-mnli\n5 behavioral signals]
+  B --> D{Cross-validation}
+  C --> D
+  D --> E[Signal scores + disagreement flags\n+ precision / recall metrics]
+      </pre>
+
+      <h3 data-i18n="blog.pipeline.s4.h3">Step 4: Phase 1–3 LLM Analysis</h3>
+
+      <p data-i18n="blog.pipeline.s4.p1">With the clustering and signal detection complete, a Claude API call runs the deeper analytical phases automatically:</p>
+
+      <ul class="list">
+        <li data-i18n="blog.pipeline.s4.ph1" data-i18n-mode="html"><strong>Phase 1 — Error Mapping:</strong> For each major cluster, the model identifies the initial condition that precedes the decision, what the rational model predicts should happen, what actually happened in the data, and what type of divergence occurred (emotional override, narrative framing, calibration distortion, model mismatch, or remap required).</li>
+        <li data-i18n="blog.pipeline.s4.ph2" data-i18n-mode="html"><strong>Phase 2 — Behavioral Signals:</strong> Based on the error patterns, the model proposes candidate signals that could be monitored during a live session — measurable, real-time indicators of when a participant's behavior is diverging from the expected model.</li>
+        <li data-i18n="blog.pipeline.s4.ph3" data-i18n-mode="html"><strong>Phase 3 — Intervention Hypotheses:</strong> For each signal, the model generates a testable hypothesis about when and how an intervention could reduce behavioral noise.</li>
+      </ul>
+
+      <p data-i18n="blog.pipeline.s4.p2">All three phases run without human input and write directly into the output Excel file.</p>
+
+      <pre class="mermaid">
+flowchart LR
+  A[Clustered sentences] --> B[Phase 1\nError Mapping]
+  B --> C[Phase 2\nBehavioral Signals]
+  C --> D[Phase 3\nIntervention\nHypotheses]
+  D --> E[Excel output]
+      </pre>
+
+      <h3 data-i18n="blog.pipeline.s5.h3">Step 5: Automated Delivery</h3>
+
+      <p data-i18n="blog.pipeline.s5.p1">The entire pipeline runs on GitHub Actions with two modes. The incremental mode triggers whenever a new recording is dropped into a shared Google Drive folder — it processes only the new file, generates an updated Excel output, uploads it back to Drive, and sends an email notification to the analyst who uploaded the file plus a set of project monitors. The cumulative mode runs on a biweekly schedule, reprocessing all transcripts together to surface patterns that only become visible across the full dataset.</p>
+
+      <p data-i18n="blog.pipeline.s5.p2">Analyst identity is determined by the Google account that uploaded the file — not the filename — so there's no naming convention to enforce or forget.</p>
+
+      <h2 data-i18n="blog.pipeline.data.h2">What the Data Revealed</h2>
+
+      <p data-i18n="blog.pipeline.data.p1">Even with four participants and 38 clusterable sentences, several clear patterns emerged.</p>
+
+      <h3 data-i18n="blog.pipeline.data.calib.h3">Calibration was the universal failure mode</h3>
+
+      <p data-i18n="blog.pipeline.data.calib.p">Every participant showed some form of confidence miscalibration during the probability tasks — but the mechanism differed. Some drifted with streaks (confidence rising after wins, collapsing after losses), some constructed patterns in structurally random sequences, and some escalated bet sizes out of boredom or frustration rather than updated probability estimates. These are meaningfully different error types that require different interventions.</p>
+
+      <h3 data-i18n="blog.pipeline.data.wealth.h3">The wealth threshold logic was sound but incomplete</h3>
+
+      <p data-i18n="blog.pipeline.data.wealth.p">One participant independently derived a sophisticated framework for when to shift from aggressive growth to capital preservation: once a $2M balance generates $60K annually at 3% HYSA interest, the marginal utility of equity risk drops sharply. The framework was correct. But the activation rule was vague — "when I have enough" — which means the framework is practically inert. The product opportunity isn't to teach the framework; it's to force the participant to define the trigger.</p>
+
+      <h3 data-i18n="blog.pipeline.data.edu.h3">Education ROI decisions split along reasoning modes</h3>
+
+      <p data-i18n="blog.pipeline.data.edu.p">Some participants applied near-complete cost-benefit logic unprompted. Others defaulted to market sentiment and readiness self-assessment, never engaging the ROI framework at all. Applying the same tool to both groups would be a category error — the pre-condition for useful feedback is knowing which reasoning mode the user is in.</p>
+
+      <p data-i18n="blog.pipeline.data.p2">These findings shaped Phase 1 of the operational model directly: three of the eight clusters showed mapping that held, two required partial remapping, and one required a decision-mode classifier as a gate step before any further analysis could apply.</p>
+
+      <h2 data-i18n="blog.pipeline.learn.h2">What I Learned</h2>
+
+      <p data-i18n="blog.pipeline.learn.p1">A few things stood out from this project that I didn't expect going in.</p>
+
+      <h3 data-i18n="blog.pipeline.learn.vol.h3">Data volume matters less than signal quality</h3>
+
+      <p data-i18n="blog.pipeline.learn.vol.p">Thirty-eight sentences is not a lot. But they're the right thirty-eight sentences — the ones where someone was actually reasoning about a financial decision, not filling conversational space. The filtering logic that gets you from 321 to 38 is as important as anything that happens afterward.</p>
+
+      <h3 data-i18n="blog.pipeline.learn.op.h3">The most interesting research questions are operational</h3>
+
+      <p data-i18n="blog.pipeline.learn.op.p">The goal was never to produce an interesting academic finding. It was to identify where a behavioral intervention could reliably reduce decision error. That forces you to be precise about what "error" means, what the expected behavior should be, and what mechanism produces the divergence — which is a more useful analytical discipline than theme extraction.</p>
+
+      <h3 data-i18n="blog.pipeline.learn.auto.h3">Automation creates accountability</h3>
+
+      <p data-i18n="blog.pipeline.learn.auto.p">When the pipeline runs the same analysis on every new transcript with the same logic, you can't unconsciously cherry-pick. The cross-validation between keyword clustering and LDA, and between rule-based and BERT-based signal detection, forces you to confront disagreements rather than smooth over them.</p>
+
+      <h2 data-i18n="blog.pipeline.next.h2">What's Next</h2>
+
+      <p data-i18n="blog.pipeline.next.p1">The pipeline is currently in Alpha deployment, processing new participant recordings automatically as they're uploaded. The next phase focuses on expanding the participant pool, refining the cluster definitions based on cumulative analysis, and beginning to test the intervention hypotheses in live sessions.</p>
+
+      <p data-i18n="blog.pipeline.next.p2">The behavioral signal framework — particularly the Confidence Drift Index and the Decision Mode Classifier — is the most promising near-term product direction. Both are measurable in real time, both correspond to observable divergence patterns in the existing data, and both suggest a specific intervention moment rather than a general recommendation.</p>
+
+      <p data-i18n="blog.pipeline.next.p3">The transcripts keep coming in. The pipeline keeps running. The hypotheses are waiting to be tested.</p>
+
+      <hr />
+
+      <p class="small" style="color: var(--muted);" data-i18n="blog.pipeline.foot">This project was built as part of the Alpha Research Study at Red Then Black. The pipeline code includes a VTT transcription module (AssemblyAI), a three-pass NLP filter, LDA topic modeling (gensim), BERT zero-shot classification (HuggingFace transformers), and an automated GitHub Actions deployment with Google Drive integration.</p>
+
+    </div>
+
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center;">
+    <span style="color:var(--muted);font-size:13px;">© <span id="yr"></span> <span data-i18n="footer.name">Luyang Si</span></span>
+    <nav style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="../" style="color:var(--muted);font-size:13px;text-decoration:none;" data-i18n="footer.home">Home</a>
+      <a href="../blog/" style="color:var(--muted);font-size:13px;text-decoration:none;" data-i18n="footer.blog">Blog</a>
+      <a href="../contact/" style="color:var(--muted);font-size:13px;text-decoration:none;" data-i18n="footer.contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/main.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
