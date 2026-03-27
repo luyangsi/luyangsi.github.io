@@ -4,6 +4,7 @@
   var T = {
     // ── Shared: Navbar
     'nav.brand.tagline': { zh: '数据分析 • 商业智能 • 行为研究' },
+    'nav.brand.name':    { zh: '司陆阳' },
     'nav.home':          { zh: '主页' },
     'nav.projects':      { zh: '项目' },
     'nav.research':      { zh: '研究' },
@@ -12,6 +13,7 @@
     'nav.contact':       { zh: '联系' },
 
     // ── Shared: Footer
+    'footer.name':     { zh: '司陆阳' },
     'footer.hosted':   { zh: '托管于 GitHub Pages。' },
     'footer.links':    { zh: '链接：' },
     'footer.home':     { zh: '主页' },
@@ -20,7 +22,7 @@
     'footer.projects': { zh: '项目' },
 
     // ── index.html
-    'home.h1':           { zh: '你好，我是司鲁阳' },
+    'home.h1':           { zh: '你好，我是司陆阳' },
     'home.hero.body':    { zh: '我构建数据管道，将数据转化为可落地的业务洞察，开展行为与产品研究，并将自然语言处理应用于真实的研究问题。' },
     'home.btn.projects': { zh: '查看项目' },
     'home.btn.email':    { zh: '发送邮件' },
@@ -197,7 +199,7 @@
     // ── blog/introducing-myself.html
     'blog.intro.allposts':       { zh: '← 所有文章' },
     'blog.intro.h1':             { zh: '自我介绍' },
-    'blog.intro.p1':             { zh: '你好，我是司鲁阳，伊利诺伊大学厄巴纳-香槟分校信息科学与数据科学专业校友，2025 年毕业。' },
+    'blog.intro.p1':             { zh: '你好，我是司陆阳，伊利诺伊大学厄巴纳-香槟分校信息科学与数据科学专业校友，2025 年毕业。' },
     'blog.intro.p2':             { zh: '我的工作横跨数据工程、分析与决策科学三个领域，专注于构建能将杂乱数据转化为可靠洞察、帮助人们在不确定条件下做出更好决策的系统。' },
     'blog.intro.p3':             { zh: '我的工作结合了数据基础设施、统计分析与行为实验，致力于打造能将复杂数据集转化为可执行知识的工具。' },
     'blog.intro.work.h2':        { zh: '我的工作方向' },
