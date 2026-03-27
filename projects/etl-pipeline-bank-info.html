@@ -14,16 +14,16 @@
   <div class="container navbar">
     <a class="brand" href="../">
       <strong>Luyang Si</strong>
-      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+      <span class="small" data-i18n="nav.brand.tagline">Data Analytics • Business Intelligence • Behavioral Research</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
-      <a class="btn pill" href="../">Home</a>
-      <a class="btn pill primary" href="../projects/">Projects</a>
-      <a class="btn pill" href="../research/">Research</a>
-      <a class="btn pill" href="../experience/">Experience</a>
-      <a class="btn pill" href="../blog/">Blog</a>
-      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn pill" href="../" data-i18n="nav.home">Home</a>
+      <a class="btn pill primary" href="../projects/" data-i18n="nav.projects">Projects</a>
+      <a class="btn pill" href="../research/" data-i18n="nav.research">Research</a>
+      <a class="btn pill" href="../experience/" data-i18n="nav.experience">Experience</a>
+      <a class="btn pill" href="../blog/" data-i18n="nav.blog">Blog</a>
+      <a class="btn pill" href="../contact/" data-i18n="nav.contact">Contact</a>
       <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
       <button class="theme-toggle" aria-label="Toggle theme">☀</button>
     </nav>
@@ -32,28 +32,34 @@
 
 <main class="container">
   <section class="section">
-    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);">← All projects</a></p>
-    <h1>ETL Pipeline: Bank Info</h1>
-    <p>An ETL mini project extracting a Wikipedia table, converting market cap currency via a local exchange-rate CSV, and loading to CSV + SQLite with Docker/CI support.</p>
+    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);" data-i18n="proj.back">← All projects</a></p>
+    <h1 data-i18n="proj.etl.h1">ETL Pipeline: Bank Info</h1>
+    <p data-i18n="proj.etl.intro">Extracts a Wikipedia table, converts market cap currency via a local exchange-rate CSV, and loads to CSV + SQLite. Containerized with Docker and automated with a CI/CD pipeline (GitHub Actions). Demonstrates production-ready ETL practices at small scale.</p>
 
     <hr />
 
-    <h2>Problem</h2>
-    <p>Demonstrate a clean, reproducible ETL workflow with portable execution and verifiable outputs.</p>
+    <h2 data-i18n="proj.problem.h2">Problem</h2>
+    <p data-i18n="proj.etl.prob">Demonstrate a clean, reproducible ETL workflow with portable execution and verifiable outputs.</p>
 
-    <h2>Context and constraints</h2>
+    <h2 data-i18n="proj.context.h2">Context and constraints</h2>
     <div class="card" style="padding: 12px 14px;">
       <ul class="list">
-        <li>Extract: Wikipedia “List of largest banks” (by market cap)</li><li>Transform: convert USD to GBP/EUR/INR using local exchange-rate CSV</li><li>Load: CSV + SQLite</li><li>Operational: CLI, Makefile shortcuts, Docker, CI smoke test</li>
+        <li data-i18n="proj.etl.ctx.l1">Extract: Wikipedia "List of largest banks" (by market cap)</li>
+        <li data-i18n="proj.etl.ctx.l2">Transform: convert USD to GBP/EUR/INR using local exchange-rate CSV</li>
+        <li data-i18n="proj.etl.ctx.l3">Load: CSV + SQLite</li>
+        <li data-i18n="proj.etl.ctx.l4">Operational: CLI, Makefile shortcuts, Docker, CI smoke test</li>
       </ul>
     </div>
 
-    <h2 style="margin-top:18px;">Approach</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.approach.h2">Approach</h2>
     <ul class="list">
-      <li>Extract and normalize the Wikipedia table</li><li>Type-cast and clean market cap values</li><li>Apply currency conversion via local exchange-rate CSV</li><li>Persist outputs to CSV and SQLite; validate with CI</li>
+      <li data-i18n="proj.etl.app.l1">Extract and normalize the Wikipedia table</li>
+      <li data-i18n="proj.etl.app.l2">Type-cast and clean market cap values</li>
+      <li data-i18n="proj.etl.app.l3">Apply currency conversion via local exchange-rate CSV</li>
+      <li data-i18n="proj.etl.app.l4">Persist outputs to CSV and SQLite; validate with CI</li>
     </ul>
 
-    <h2 style="margin-top:18px;">Architecture</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.arch.h2">Architecture</h2>
     <pre class="mermaid">
 flowchart TB
   A[Wikipedia table] --> B[Extract]
@@ -65,27 +71,29 @@ flowchart TB
   H[CI smoke test] --> I[Build verification]
     </pre>
 
-    <h2 style="margin-top:18px;">Implementation highlights</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.highlights.h2">Implementation highlights</h2>
     <ul class="list">
-      <li>CLI + Makefile for consistent execution</li><li>Dockerized runtime for environment parity</li><li>CI smoke test to detect regressions</li>
+      <li data-i18n="proj.etl.hl.l1">CLI + Makefile for consistent execution</li>
+      <li data-i18n="proj.etl.hl.l2">Dockerized runtime for environment parity</li>
+      <li data-i18n="proj.etl.hl.l3">CI smoke test to detect regressions</li>
     </ul>
 
-    <h2 style="margin-top:18px;">Results and impact</h2>
-    <div class="notice">
+    <h2 style="margin-top:18px;" data-i18n="proj.results.h2">Results and impact</h2>
+    <div class="notice" data-i18n="proj.etl.result">
       End-to-end ETL with operational readiness patterns (Docker + CI). No runtime performance metrics claimed.
     </div>
 
-    <h2 style="margin-top:18px;">Tech stack</h2>
-    <p>Python, SQLite, Docker, GitHub Actions.</p>
+    <h2 style="margin-top:18px;" data-i18n="proj.tech.h2">Tech stack</h2>
+    <p data-i18n="proj.etl.tech">Python, SQLite, Docker, GitHub Actions.</p>
 
-    <h2 style="margin-top:18px;">Links</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.links.h2">Links</h2>
     <ul class="list">
       <li>Repo: <a href="https://github.com/luyangsi/ETL_Pipeline_Bank_Info" target="_blank" rel="noreferrer">https://github.com/luyangsi/ETL_Pipeline_Bank_Info</a></li>
       <li>Projects index: <a href="./">/projects/</a></li>
     </ul>
 
-    <h2 style="margin-top:18px;">What I’d improve next</h2>
-    <p>Add incremental refresh logic and schema validation to handle upstream HTML/table changes.</p>
+    <h2 style="margin-top:18px;" data-i18n="proj.next.h2">What I'd improve next</h2>
+    <p data-i18n="proj.etl.next">Add incremental refresh logic and schema validation to handle upstream HTML/table changes.</p>
   </section>
 </main>
 
@@ -103,9 +111,8 @@ flowchart TB
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="../assets/i18n.js"></script>
 <script src="../assets/main.js"></script>
 
 </body>

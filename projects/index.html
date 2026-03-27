@@ -7,7 +7,7 @@
   <meta name="description" content="Project case studies: pipelines, data quality, and applied NLP." />
   <link rel="icon" href="../favicon.svg" />
   <link rel="stylesheet" href="../assets/styles.css" />
-  
+
   <!-- JSON-LD Schema Markup -->
   <script type="application/ld+json">
   {
@@ -25,16 +25,16 @@
   <div class="container navbar">
     <a class="brand" href="../">
       <strong>Luyang Si</strong>
-      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+      <span class="small" data-i18n="nav.brand.tagline">Data Analytics • Business Intelligence • Behavioral Research</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
-      <a class="btn pill" href="../">Home</a>
-      <a class="btn pill primary" href="../projects/">Projects</a>
-      <a class="btn pill" href="../research/">Research</a>
-      <a class="btn pill" href="../experience/">Experience</a>
-      <a class="btn pill" href="../blog/">Blog</a>
-      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn pill" href="../" data-i18n="nav.home">Home</a>
+      <a class="btn pill primary" href="../projects/" data-i18n="nav.projects">Projects</a>
+      <a class="btn pill" href="../research/" data-i18n="nav.research">Research</a>
+      <a class="btn pill" href="../experience/" data-i18n="nav.experience">Experience</a>
+      <a class="btn pill" href="../blog/" data-i18n="nav.blog">Blog</a>
+      <a class="btn pill" href="../contact/" data-i18n="nav.contact">Contact</a>
       <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
       <button class="theme-toggle" aria-label="Toggle theme">☀</button>
     </nav>
@@ -43,102 +43,112 @@
 
 <main class="container">
   <section class="section">
-    <h1>Projects</h1>
-    <p>Case studies with a consistent structure: problem, constraints, approach, architecture, results, and next steps.</p>
-    
+    <h1 data-i18n="projects.h1">Projects</h1>
+    <p data-i18n="projects.sub">Case studies with a consistent structure: problem, constraints, approach, architecture, results, and next steps.</p>
+
     <!-- Filter Section -->
     <div style="margin-top: 20px; margin-bottom: 16px;">
-      <div class="small" style="margin-bottom: 10px; color: var(--muted);">Filter by tag:</div>
+      <div class="small" style="margin-bottom: 10px; color: var(--muted);" data-i18n="projects.filter">Filter by tag:</div>
       <div id="filter-tags" style="display: flex; flex-wrap: wrap; gap: 8px;">
         <button class="badge" data-filter="all" style="cursor: pointer; border: 1px solid rgba(110,168,254,.35); background: rgba(110,168,254,.15); color: var(--accent); font-weight: 600;">All</button>
       </div>
     </div>
-    
+
     <div class="grid cols3" style="margin-top: 14px;">
 
 <article class="card project-card" data-tags="Data Engineering,Python,Anomaly Detection,Data Quality">
-  <h3>Semiconductors Data Platform</h3>
-  <p>End-to-end fab operations pipeline: 4-layer medallion architecture, YAML-based rule engine with 15+ validation checks, watermark-based incremental ingestion, and yield/equipment health analytics.</p>
+  <h3 data-i18n="projects.semi.h3">Semiconductors Data Platform</h3>
+  <p data-i18n="projects.semi.p">End-to-end fab operations pipeline: 4-layer medallion architecture, YAML-based rule engine with 15+ validation checks, watermark-based incremental ingestion, and yield/equipment health analytics.</p>
   <div class="project-tags"><span class="badge">Data Engineering</span> <span class="badge">Python</span> <span class="badge">Anomaly Detection</span> <span class="badge">Data Quality</span></div>
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn primary" href="semiconductors-data-platform.html">Case study</a>
+    <a class="btn primary" href="semiconductors-data-platform.html" data-i18n="proj.casestudy">Case study</a>
     <a class="btn" href="https://github.com/luyangsi/semiconductors_data_platform" target="_blank" rel="noreferrer">Repo</a>
   </div>
 </article>
 
 
 <article class="card project-card" data-tags="Data Discovery,Analytics,Python">
-  <h3>Research Dataset Recommendation System</h3>
-  <p>Matches research questions to datasets across 25+ sources; reduces discovery time from ~2 hours to <5 minutes.</p>
+  <h3 data-i18n="projects.recommender.h3">Research Dataset Recommendation System</h3>
+  <p data-i18n="projects.recommender.p">Matches research questions to datasets across 25+ sources; reduces discovery time from ~2 hours to <5 minutes.</p>
   <div class="project-tags"><span class="badge">Data Discovery</span> <span class="badge">Analytics</span> <span class="badge">Python</span></div>
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn primary" href="research-dataset-recommender.html">Case study</a>
+    <a class="btn primary" href="research-dataset-recommender.html" data-i18n="proj.casestudy">Case study</a>
     <a class="btn" href="https://github.com/luyangsi/Research_Dataset_Recommender" target="_blank" rel="noreferrer">Repo</a>
   </div>
 </article>
 
 
 <article class="card project-card" data-tags="Data Engineering,Azure SQL,Watermarking">
-  <h3>Canvas Platform Data Ingestion</h3>
-  <p>Medallion-layered pipeline (raw/cur/meta) for Azure SQL with rerun-safe watermarking, schema-drift detection, and operational health monitoring.</p>
+  <h3 data-i18n="projects.canvas.h3">Canvas Platform Data Ingestion</h3>
+  <p data-i18n="projects.canvas.p">Medallion-layered pipeline (raw/cur/meta) for Azure SQL with rerun-safe watermarking, schema-drift detection, and operational health monitoring.</p>
   <div class="project-tags"><span class="badge">Data Engineering</span> <span class="badge">Azure SQL</span> <span class="badge">Watermarking</span></div>
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn primary" href="canvas-platform-data-ingestion.html">Case study</a>
+    <a class="btn primary" href="canvas-platform-data-ingestion.html" data-i18n="proj.casestudy">Case study</a>
     <a class="btn" href="https://github.com/luyangsi/Canvas_pipeline" target="_blank" rel="noreferrer">Repo</a>
   </div>
 </article>
 
 
 <article class="card project-card" data-tags="NLP,Multilingual,Embeddings">
-  <h3>Wikipedia Cross-Lingual Semantic Analysis (EN ↔ ZH)</h3>
-  <p>Pairs EN↔ZH Wikipedia articles and flags low-similarity mismatch sentences using multilingual embeddings for cross-lingual content bias review.</p>
+  <h3 data-i18n="projects.wiki.h3">Wikipedia Cross-Lingual Semantic Analysis (EN ↔ ZH)</h3>
+  <p data-i18n="projects.wiki.p">Pairs EN↔ZH Wikipedia articles and flags low-similarity mismatch sentences using multilingual embeddings for cross-lingual content bias review.</p>
   <div class="project-tags"><span class="badge">NLP</span> <span class="badge">Multilingual</span> <span class="badge">Embeddings</span></div>
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn primary" href="wikipedia-api-extraction.html">Case study</a>
+    <a class="btn primary" href="wikipedia-api-extraction.html" data-i18n="proj.casestudy">Case study</a>
     <a class="btn" href="https://github.com/luyangsi/Wikipedia_API_Extraction" target="_blank" rel="noreferrer">Repo</a>
   </div>
 </article>
 
 
 <article class="card project-card" data-tags="Data Quality,Metadata,Research,Anomaly Detection">
-  <h3>Crossref Retraction Metadata Analysis</h3>
-  <p>Automated monitoring pipeline detecting retraction status drift across 208 DOIs; precision/recall analysis of flag classifier reliability — a data integrity and anomaly detection system for scholarly metadata.</p>
+  <h3 data-i18n="projects.crossref.h3">Crossref Retraction Metadata Analysis</h3>
+  <p data-i18n="projects.crossref.p">Automated monitoring pipeline detecting retraction status drift across 208 DOIs; precision/recall analysis of flag classifier reliability — a data integrity and anomaly detection system for scholarly metadata.</p>
   <div class="project-tags"><span class="badge">Data Quality</span> <span class="badge">Metadata</span> <span class="badge">Research</span> <span class="badge">Anomaly Detection</span></div>
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn primary" href="crossref-retraction-metadata.html">Case study</a>
+    <a class="btn primary" href="crossref-retraction-metadata.html" data-i18n="proj.casestudy">Case study</a>
     <a class="btn" href="https://github.com/luyangsi/Crossref_Metadata_Analysis" target="_blank" rel="noreferrer">Repo</a>
   </div>
 </article>
 
 
 <article class="card project-card" data-tags="Finance,Simulations,Statistics,Calibration">
-  <h3>Finance Concept Analysis</h3>
-  <p>Quantitative simulators and analyses covering confidence calibration, gambler's fallacy, and lifecycle investment — applying statistical reasoning to behavioral and financial decision-making.</p>
+  <h3 data-i18n="projects.finance.h3">Finance Concept Analysis</h3>
+  <p data-i18n="projects.finance.p">Quantitative simulators and statistical analyses examining confidence calibration error, gambler's fallacy under streak conditions, and lifecycle investment modeling — applying behavioral economics and probabilistic reasoning to real financial decision problems. Includes reproducible Python notebooks with visualization outputs.</p>
   <div class="project-tags"><span class="badge">Finance</span> <span class="badge">Simulations</span> <span class="badge">Statistics</span> <span class="badge">Calibration</span></div>
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn primary" href="finance-concept-analysis.html">Case study</a>
+    <a class="btn primary" href="finance-concept-analysis.html" data-i18n="proj.casestudy">Case study</a>
     <a class="btn" href="https://github.com/luyangsi/Finance-concept-analysis" target="_blank" rel="noreferrer">Repo</a>
   </div>
 </article>
 
 
-<article class="card project-card" data-tags="ETL,SQLite,Docker,CI">
-  <h3>ETL Pipeline: Bank Info</h3>
-  <p>ETL mini project extracting a Wikipedia table, converting currency via local CSV, and loading to CSV + SQLite.</p>
-  <div class="project-tags"><span class="badge">ETL</span> <span class="badge">SQLite</span> <span class="badge">Docker</span> <span class="badge">CI</span></div>
+<article class="card project-card" data-tags="Behavioral Research,Product Analytics,User Research">
+  <h3 data-i18n="projects.rtb.h3">Behavioral Decision Research at RtB</h3>
+  <p data-i18n="projects.rtb.p">Designing and analyzing 9 user interview sessions and a 4-round divergence study to surface calibration and confidence signals for an alpha-stage fintech product.</p>
+  <div class="project-tags"><span class="badge">Behavioral Research</span> <span class="badge">Product Analytics</span> <span class="badge">User Research</span></div>
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn primary" href="etl-pipeline-bank-info.html">Case study</a>
+    <a class="btn primary" href="rtb-behavioral-research.html" data-i18n="proj.casestudy">Case study</a>
+  </div>
+</article>
+
+
+<article class="card project-card" data-tags="ETL,SQLite,Docker,GitHub Actions,CI/CD">
+  <h3 data-i18n="projects.etl.h3">ETL Pipeline: Bank Info</h3>
+  <p data-i18n="projects.etl.p">Extracts a Wikipedia table, converts currency via local CSV lookup, and loads to CSV + SQLite. Containerized with Docker and automated with CI/CD pipeline (GitHub Actions). Demonstrates production-ready ETL practices at small scale.</p>
+  <div class="project-tags"><span class="badge">ETL</span> <span class="badge">SQLite</span> <span class="badge">Docker</span> <span class="badge">GitHub Actions</span> <span class="badge">CI/CD</span></div>
+  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+    <a class="btn primary" href="etl-pipeline-bank-info.html" data-i18n="proj.casestudy">Case study</a>
     <a class="btn" href="https://github.com/luyangsi/ETL_Pipeline_Bank_Info" target="_blank" rel="noreferrer">Repo</a>
   </div>
 </article>
 
 
 <article class="card project-card" data-tags="Research,Analytics,Privacy">
-  <h3>Sports Motivation Analysis</h3>
-  <p>Applied research analysis with simulated data to preserve privacy while keeping schema consistent.</p>
+  <h3 data-i18n="projects.sports.h3">Sports Motivation Analysis</h3>
+  <p data-i18n="projects.sports.p">Applied research analysis with simulated data to preserve privacy while keeping schema consistent.</p>
   <div class="project-tags"><span class="badge">Research</span> <span class="badge">Analytics</span> <span class="badge">Privacy</span></div>
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn primary" href="sports-motivation-analysis.html">Case study</a>
+    <a class="btn primary" href="sports-motivation-analysis.html" data-i18n="proj.casestudy">Case study</a>
     <a class="btn" href="https://github.com/luyangsi/Sports_Motivitation_Analysis" target="_blank" rel="noreferrer">Repo</a>
   </div>
 </article>
@@ -160,6 +170,7 @@
     </div>
   </div>
 </footer>
+<script src="../assets/i18n.js"></script>
 <script src="../assets/main.js"></script>
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
@@ -191,7 +202,7 @@ sortedTags.forEach(tag => {
 // Filter function
 function filterProjects(selectedTag) {
   const filterBtns = document.querySelectorAll('#filter-tags .badge');
-  
+
   // Update button styles
   filterBtns.forEach(btn => {
     if (btn.getAttribute('data-filter') === selectedTag || (selectedTag === 'all' && btn.getAttribute('data-filter') === 'all')) {
@@ -206,7 +217,7 @@ function filterProjects(selectedTag) {
       btn.style.fontWeight = '400';
     }
   });
-  
+
   // Show/hide projects
   projects.forEach(project => {
     const projectTags = project.getAttribute('data-tags').split(',').map(tag => tag.trim());

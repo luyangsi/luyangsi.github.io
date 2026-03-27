@@ -14,16 +14,16 @@
   <div class="container navbar">
     <a class="brand" href="../">
       <strong>Luyang Si</strong>
-      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+      <span class="small" data-i18n="nav.brand.tagline">Data Analytics • Business Intelligence • Behavioral Research</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
-      <a class="btn pill" href="../">Home</a>
-      <a class="btn pill primary" href="../projects/">Projects</a>
-      <a class="btn pill" href="../research/">Research</a>
-      <a class="btn pill" href="../experience/">Experience</a>
-      <a class="btn pill" href="../blog/">Blog</a>
-      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn pill" href="../" data-i18n="nav.home">Home</a>
+      <a class="btn pill primary" href="../projects/" data-i18n="nav.projects">Projects</a>
+      <a class="btn pill" href="../research/" data-i18n="nav.research">Research</a>
+      <a class="btn pill" href="../experience/" data-i18n="nav.experience">Experience</a>
+      <a class="btn pill" href="../blog/" data-i18n="nav.blog">Blog</a>
+      <a class="btn pill" href="../contact/" data-i18n="nav.contact">Contact</a>
       <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
       <button class="theme-toggle" aria-label="Toggle theme">☀</button>
     </nav>
@@ -32,28 +32,32 @@
 
 <main class="container">
   <section class="section">
-    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);">← All projects</a></p>
-    <h1>Wikipedia API Extraction</h1>
-    <p>A multilingual NLP pipeline that pairs EN↔ZH Wikipedia pages and flags low-similarity mismatch sentences using multilingual embeddings.</p>
+    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);" data-i18n="proj.back">← All projects</a></p>
+    <h1 data-i18n="proj.wiki.h1">Wikipedia API Extraction</h1>
+    <p data-i18n="proj.wiki.intro">A multilingual NLP pipeline that pairs EN↔ZH Wikipedia pages and flags low-similarity mismatch sentences using multilingual embeddings.</p>
 
     <hr />
 
-    <h2>Problem</h2>
-    <p>Cross-language differences can create inconsistencies; identifying mismatched content requires scalable methods.</p>
+    <h2 data-i18n="proj.problem.h2">Problem</h2>
+    <p data-i18n="proj.wiki.prob">Cross-language differences can create inconsistencies; identifying mismatched content requires scalable methods.</p>
 
-    <h2>Context and constraints</h2>
+    <h2 data-i18n="proj.context.h2">Context and constraints</h2>
     <div class="card" style="padding: 12px 14px;">
       <ul class="list">
-        <li>Languages: English and Chinese Wikipedia</li><li>Sensitive identity categories: race, gender/sex, nationality, age, religion</li><li>Need: candidate generation + semantic similarity at document and sentence levels</li>
+        <li data-i18n="proj.wiki.ctx.l1">Languages: English and Chinese Wikipedia</li>
+        <li data-i18n="proj.wiki.ctx.l2">Sensitive identity categories: race, gender/sex, nationality, age, religion</li>
+        <li data-i18n="proj.wiki.ctx.l3">Need: candidate generation + semantic similarity at document and sentence levels</li>
       </ul>
     </div>
 
-    <h2 style="margin-top:18px;">Approach</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.approach.h2">Approach</h2>
     <ul class="list">
-      <li>Extract pages and generate candidate EN↔ZH pairings</li><li>Compute similarity with multilingual embeddings</li><li>Surface low-similarity sentence pairs for downstream review</li>
+      <li data-i18n="proj.wiki.app.l1">Extract pages and generate candidate EN↔ZH pairings</li>
+      <li data-i18n="proj.wiki.app.l2">Compute similarity with multilingual embeddings</li>
+      <li data-i18n="proj.wiki.app.l3">Surface low-similarity sentence pairs for downstream review</li>
     </ul>
 
-    <h2 style="margin-top:18px;">Architecture</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.arch.h2">Architecture</h2>
     <pre class="mermaid">
 flowchart LR
   A[Wikipedia API] --> B[Page extraction]
@@ -64,27 +68,29 @@ flowchart LR
   F --> G[Low-similarity mismatches]
     </pre>
 
-    <h2 style="margin-top:18px;">Implementation highlights</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.highlights.h2">Implementation highlights</h2>
     <ul class="list">
-      <li>Candidate pairing to reduce the search space</li><li>Two-level scoring (document + sentence)</li><li>Outputs designed for qualitative review and audits</li>
+      <li data-i18n="proj.wiki.hl.l1">Candidate pairing to reduce the search space</li>
+      <li data-i18n="proj.wiki.hl.l2">Two-level scoring (document + sentence)</li>
+      <li data-i18n="proj.wiki.hl.l3">Outputs designed for qualitative review and audits</li>
     </ul>
 
-    <h2 style="margin-top:18px;">Results and impact</h2>
-    <div class="notice">
+    <h2 style="margin-top:18px;" data-i18n="proj.results.h2">Results and impact</h2>
+    <div class="notice" data-i18n="proj.wiki.result">
       Produced ranked candidate pairs and mismatch sentence pairs for targeted review (no invented accuracy metrics).
     </div>
 
-    <h2 style="margin-top:18px;">Tech stack</h2>
-    <p>Python, Wikipedia API, multilingual embeddings, text processing.</p>
+    <h2 style="margin-top:18px;" data-i18n="proj.tech.h2">Tech stack</h2>
+    <p data-i18n="proj.wiki.tech">Python, Wikipedia API, multilingual embeddings, text processing.</p>
 
-    <h2 style="margin-top:18px;">Links</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.links.h2">Links</h2>
     <ul class="list">
       <li>Repo: <a href="https://github.com/luyangsi/Wikipedia_API_Extraction" target="_blank" rel="noreferrer">https://github.com/luyangsi/Wikipedia_API_Extraction</a></li>
       <li>Projects index: <a href="./">/projects/</a></li>
     </ul>
 
-    <h2 style="margin-top:18px;">What I’d improve next</h2>
-    <p>Introduce human-in-the-loop validation and threshold calibration per category.</p>
+    <h2 style="margin-top:18px;" data-i18n="proj.next.h2">What I'd improve next</h2>
+    <p data-i18n="proj.wiki.next">Introduce human-in-the-loop validation and threshold calibration per category.</p>
   </section>
 </main>
 
@@ -102,9 +108,8 @@ flowchart LR
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="../assets/i18n.js"></script>
 <script src="../assets/main.js"></script>
 
 </body>

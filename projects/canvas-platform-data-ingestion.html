@@ -14,16 +14,16 @@
   <div class="container navbar">
     <a class="brand" href="../">
       <strong>Luyang Si</strong>
-      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+      <span class="small" data-i18n="nav.brand.tagline">Data Analytics • Business Intelligence • Behavioral Research</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
-      <a class="btn pill" href="../">Home</a>
-      <a class="btn pill primary" href="../projects/">Projects</a>
-      <a class="btn pill" href="../research/">Research</a>
-      <a class="btn pill" href="../experience/">Experience</a>
-      <a class="btn pill" href="../blog/">Blog</a>
-      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn pill" href="../" data-i18n="nav.home">Home</a>
+      <a class="btn pill primary" href="../projects/" data-i18n="nav.projects">Projects</a>
+      <a class="btn pill" href="../research/" data-i18n="nav.research">Research</a>
+      <a class="btn pill" href="../experience/" data-i18n="nav.experience">Experience</a>
+      <a class="btn pill" href="../blog/" data-i18n="nav.blog">Blog</a>
+      <a class="btn pill" href="../contact/" data-i18n="nav.contact">Contact</a>
       <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
       <button class="theme-toggle" aria-label="Toggle theme">☀</button>
     </nav>
@@ -32,28 +32,34 @@
 
 <main class="container">
   <section class="section">
-    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);">← All projects</a></p>
-    <h1>Canvas Platform Data Ingestion</h1>
-    <p>A production-style medallion pipeline (raw/cur/meta) that ingests Canvas-style JSONL into Azure SQL with rerun-safe watermarking, auditing, and data quality checks.</p>
+    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);" data-i18n="proj.back">← All projects</a></p>
+    <h1 data-i18n="proj.canvas.h1">Canvas Platform Data Ingestion</h1>
+    <p data-i18n="proj.canvas.intro">A production-style medallion pipeline (raw/cur/meta) that ingests Canvas-style JSONL into Azure SQL with rerun-safe watermarking, auditing, and data quality checks.</p>
 
     <hr />
 
-    <h2>Problem</h2>
-    <p>Analytics teams need rerunnable ingestion of semi-structured data with auditing, quality checks, and minimal reprocessing.</p>
+    <h2 data-i18n="proj.problem.h2">Problem</h2>
+    <p data-i18n="proj.canvas.prob">Analytics teams need rerunnable ingestion of semi-structured data with auditing, quality checks, and minimal reprocessing.</p>
 
-    <h2>Context and constraints</h2>
+    <h2 data-i18n="proj.context.h2">Context and constraints</h2>
     <div class="card" style="padding: 12px 14px;">
       <ul class="list">
-        <li>Source: Canvas-style JSONL</li><li>Target: Azure SQL</li><li>Architecture: raw → curated → meta</li><li>Requirement: rerun-safe incremental ingestion via watermarking</li><li>Operational needs: run auditing, DQ checks, schema-drift detection</li>
+        <li data-i18n="proj.canvas.ctx.l1">Source: Canvas-style JSONL</li>
+        <li data-i18n="proj.canvas.ctx.l2">Target: Azure SQL</li>
+        <li data-i18n="proj.canvas.ctx.l3">Architecture: raw → curated → meta</li>
+        <li data-i18n="proj.canvas.ctx.l4">Requirement: rerun-safe incremental ingestion via watermarking</li>
+        <li data-i18n="proj.canvas.ctx.l5">Operational needs: run auditing, DQ checks, schema-drift detection</li>
       </ul>
     </div>
 
-    <h2 style="margin-top:18px;">Approach</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.approach.h2">Approach</h2>
     <ul class="list">
-      <li>Implement medallion layers: raw landing tables, curated transforms, and meta operational tables</li><li>Use watermark tables/logic to load only new or changed data</li><li>Capture job runs and DQ results for traceability</li>
+      <li data-i18n="proj.canvas.app.l1">Implement medallion layers: raw landing tables, curated transforms, and meta operational tables</li>
+      <li data-i18n="proj.canvas.app.l2">Use watermark tables/logic to load only new or changed data</li>
+      <li data-i18n="proj.canvas.app.l3">Capture job runs and DQ results for traceability</li>
     </ul>
 
-    <h2 style="margin-top:18px;">Architecture</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.arch.h2">Architecture</h2>
     <pre class="mermaid">
 flowchart TB
   A[JSONL source] --> B[raw schema]
@@ -65,27 +71,29 @@ flowchart TB
   M --> R[watermark for incremental runs]
     </pre>
 
-    <h2 style="margin-top:18px;">Implementation highlights</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.highlights.h2">Implementation highlights</h2>
     <ul class="list">
-      <li>Rerun-safe watermarking to reduce reprocessing</li><li>Operational metadata for auditing and troubleshooting</li><li>Data quality checks and schema-drift detection recorded in meta tables</li>
+      <li data-i18n="proj.canvas.hl.l1">Rerun-safe watermarking to reduce reprocessing</li>
+      <li data-i18n="proj.canvas.hl.l2">Operational metadata for auditing and troubleshooting</li>
+      <li data-i18n="proj.canvas.hl.l3">Data quality checks and schema-drift detection recorded in meta tables</li>
     </ul>
 
-    <h2 style="margin-top:18px;">Results and impact</h2>
-    <div class="notice">
+    <h2 style="margin-top:18px;" data-i18n="proj.results.h2">Results and impact</h2>
+    <div class="notice" data-i18n="proj.canvas.result">
       Reduced reprocessing by limiting loads to new/changed records based on watermark; improved operational transparency via auditing and quality monitoring.
     </div>
 
-    <h2 style="margin-top:18px;">Tech stack</h2>
-    <p>Python, Azure SQL, JSONL ingestion, SQL transformations, Git/GitHub.</p>
+    <h2 style="margin-top:18px;" data-i18n="proj.tech.h2">Tech stack</h2>
+    <p data-i18n="proj.canvas.tech">Python, Azure SQL, JSONL ingestion, SQL transformations, Git/GitHub.</p>
 
-    <h2 style="margin-top:18px;">Links</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.links.h2">Links</h2>
     <ul class="list">
       <li>Repo: <a href="https://github.com/luyangsi/Canvas_pipeline" target="_blank" rel="noreferrer">https://github.com/luyangsi/Canvas_pipeline</a></li>
       <li>Projects index: <a href="./">/projects/</a></li>
     </ul>
 
-    <h2 style="margin-top:18px;">What I’d improve next</h2>
-    <p>Add alerting on DQ failures and contract tests to guard against upstream schema changes.</p>
+    <h2 style="margin-top:18px;" data-i18n="proj.next.h2">What I'd improve next</h2>
+    <p data-i18n="proj.canvas.next">Add alerting on DQ failures and contract tests to guard against upstream schema changes.</p>
   </section>
 </main>
 
@@ -103,9 +111,8 @@ flowchart TB
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="../assets/i18n.js"></script>
 <script src="../assets/main.js"></script>
 
 </body>

@@ -14,16 +14,16 @@
   <div class="container navbar">
     <a class="brand" href="../">
       <strong>Luyang Si</strong>
-      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+      <span class="small" data-i18n="nav.brand.tagline">Data Analytics • Business Intelligence • Behavioral Research</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
-      <a class="btn pill" href="../">Home</a>
-      <a class="btn pill primary" href="../projects/">Projects</a>
-      <a class="btn pill" href="../research/">Research</a>
-      <a class="btn pill" href="../experience/">Experience</a>
-      <a class="btn pill" href="../blog/">Blog</a>
-      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn pill" href="../" data-i18n="nav.home">Home</a>
+      <a class="btn pill primary" href="../projects/" data-i18n="nav.projects">Projects</a>
+      <a class="btn pill" href="../research/" data-i18n="nav.research">Research</a>
+      <a class="btn pill" href="../experience/" data-i18n="nav.experience">Experience</a>
+      <a class="btn pill" href="../blog/" data-i18n="nav.blog">Blog</a>
+      <a class="btn pill" href="../contact/" data-i18n="nav.contact">Contact</a>
       <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
       <button class="theme-toggle" aria-label="Toggle theme">☀</button>
     </nav>
@@ -32,57 +32,70 @@
 
 <main class="container">
   <section class="section">
-    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);">← All projects</a></p>
-    <h1>Finance Concept Analysis</h1>
-    <p>A learning and simulation workspace for quantitative finance concepts and personal-finance decision-making.</p>
+    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);" data-i18n="proj.back">← All projects</a></p>
+    <h1 data-i18n="proj.finance.h1">Finance Concept Analysis</h1>
+    <p data-i18n="proj.finance.intro">Quantitative simulators and statistical analyses examining confidence calibration error, gambler's fallacy under streak conditions, and lifecycle investment modeling — applying behavioral economics and probabilistic reasoning to real financial decision problems. Includes reproducible Python notebooks with visualization outputs.</p>
 
     <hr />
 
-    <h2>Problem</h2>
-    <p>Many finance concepts are unintuitive; small simulations and structured notes help validate intuition and communicate decision biases.</p>
+    <h2 data-i18n="proj.problem.h2">Problem</h2>
+    <p data-i18n="proj.finance.prob">Many financial decision errors stem not from lack of information but from systematic cognitive biases — overconfidence, streak-driven pattern inference, and miscalibrated probability estimates. Quantifying these biases through simulation makes them concrete, reproducible, and communicable to stakeholders and researchers.</p>
 
-    <h2>Context and constraints</h2>
+    <h2 data-i18n="proj.context.h2">Context and constraints</h2>
     <div class="card" style="padding: 12px 14px;">
       <ul class="list">
-        <li>Organizes simulators, papers, and reports</li><li>Includes gambler’s fallacy and lifecycle investment learning components</li><li>Constraints: educational framing; avoid invented performance metrics</li>
+        <li data-i18n="proj.finance.ctx.l1">Scope: confidence calibration error, gambler's fallacy under streak conditions, lifecycle investment modeling</li>
+        <li data-i18n="proj.finance.ctx.l2">Built as the quantitative companion to behavioral research conducted at RtB</li>
+        <li data-i18n="proj.finance.ctx.l3">Constraint: reproducible notebooks with documented parameters; no invented performance metrics</li>
       </ul>
     </div>
 
-    <h2 style="margin-top:18px;">Approach</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.approach.h2">Approach</h2>
     <ul class="list">
-      <li>Provide small simulators for intuition-building</li><li>Organize reading notes and summaries</li><li>Document experiments so others can reproduce them</li>
+      <li data-i18n="proj.finance.app.l1">Model each behavioral phenomenon as a standalone simulation with configurable parameters</li>
+      <li data-i18n="proj.finance.app.l2">Run experiments across parameter ranges and visualize distributions of outcomes</li>
+      <li data-i18n="proj.finance.app.l3">Interpret results in relation to real decision-making contexts (financial planning, investment timing)</li>
+      <li data-i18n="proj.finance.app.l4">Document notebooks for reproducibility and peer review</li>
     </ul>
 
-    <h2 style="margin-top:18px;">Architecture</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.arch.h2">Architecture</h2>
     <pre class="mermaid">
 flowchart LR
-  A[Concept / hypothesis] --> B[Simulator]
-  B --> C[Run experiments]
-  C --> D[Visualize / summarize]
-  D --> E[Notes & interpretations]
+  A[Behavioral hypothesis] --> B[Simulator / model]
+  B --> C[Parameter sweep]
+  C --> D[Visualization outputs]
+  D --> E[Interpretation & documentation]
     </pre>
 
-    <h2 style="margin-top:18px;">Implementation highlights</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.highlights.h2">Implementation highlights</h2>
     <ul class="list">
-      <li>Clear structure for simulations and references</li><li>Reproducible experiments with documented parameters</li><li>Teaching-oriented framing for explaining finance heuristics</li>
+      <li data-i18n="proj.finance.hl.l1">Confidence calibration error simulations with visualization outputs showing over/underconfidence distributions</li>
+      <li data-i18n="proj.finance.hl.l2">Gambler's fallacy modeling under streak conditions, including parameter sweeps across streak length and sample size</li>
+      <li data-i18n="proj.finance.hl.l3">Lifecycle investment modeling applying probabilistic reasoning to retirement timing and savings rate decisions</li>
+      <li data-i18n="proj.finance.hl.l4">Reproducible Python notebooks with fixed random seeds, documented parameters, and visual outputs</li>
     </ul>
 
-    <h2 style="margin-top:18px;">Results and impact</h2>
-    <div class="notice">
-      Educational project demonstrating finance concepts through reproducible simulations and documentation (no numeric performance claims).
+    <h2 style="margin-top:18px;" data-i18n="proj.results.h2">Results and impact</h2>
+    <div class="notice" data-i18n="proj.finance.result">
+      Reproducible simulations translating abstract behavioral economics concepts into concrete, measurable decision error patterns — directly informing the product signal definitions used in RtB's alpha-stage research.
     </div>
 
-    <h2 style="margin-top:18px;">Tech stack</h2>
-    <p>Python, simulation, documentation.</p>
+    <div class="notice" style="margin-top: 16px;" data-i18n="proj.finance.result2" data-i18n-mode="html">
+      <strong>RtB Connection:</strong> This project was built as part of behavioral research conducted at Red then Black (RtB). The simulations model the exact phenomena studied in RtB's user sessions — confidence calibration error, gambler's fallacy under streak conditions, and decision divergence from expected outcomes. The quantitative framework here underpins the product signal definitions used in RtB's alpha-stage research. <a href="rtb-behavioral-research.html" style="color: var(--accent);">See RtB Behavioral Decision Research →</a>
+    </div>
 
-    <h2 style="margin-top:18px;">Links</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.tech.h2">Tech stack</h2>
+    <p data-i18n="proj.finance.tech">Python, Jupyter, simulation, statistical analysis, visualization.</p>
+
+    <h2 style="margin-top:18px;" data-i18n="proj.links.h2">Links</h2>
     <ul class="list">
       <li>Repo: <a href="https://github.com/luyangsi/Finance-concept-analysis" target="_blank" rel="noreferrer">https://github.com/luyangsi/Finance-concept-analysis</a></li>
+      <li data-i18n="proj.finance.rel" data-i18n-mode="html">Related: <a href="rtb-behavioral-research.html" style="color: var(--accent);">RtB Behavioral Decision Research case study →</a></li>
       <li>Projects index: <a href="./">/projects/</a></li>
     </ul>
 
-    <h2 style="margin-top:18px;">What I’d improve next</h2>
-    <p>Add an interactive web demo and unit tests with fixed random seeds for deterministic runs.</p>
+    <h2 style="margin-top:18px;" data-i18n="proj.next.h2">What I'd improve next</h2>
+    <p data-i18n="proj.finance.next">Add an interactive web demo and unit tests with fixed random seeds for fully deterministic runs across environments.</p>
   </section>
 </main>
 
@@ -100,9 +113,8 @@ flowchart LR
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="../assets/i18n.js"></script>
 <script src="../assets/main.js"></script>
 
 </body>

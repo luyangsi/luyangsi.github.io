@@ -14,16 +14,16 @@
   <div class="container navbar">
     <a class="brand" href="../">
       <strong>Luyang Si</strong>
-      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+      <span class="small" data-i18n="nav.brand.tagline">Data Analytics • Business Intelligence • Behavioral Research</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
-      <a class="btn pill" href="../">Home</a>
-      <a class="btn pill primary" href="../projects/">Projects</a>
-      <a class="btn pill" href="../research/">Research</a>
-      <a class="btn pill" href="../experience/">Experience</a>
-      <a class="btn pill" href="../blog/">Blog</a>
-      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn pill" href="../" data-i18n="nav.home">Home</a>
+      <a class="btn pill primary" href="../projects/" data-i18n="nav.projects">Projects</a>
+      <a class="btn pill" href="../research/" data-i18n="nav.research">Research</a>
+      <a class="btn pill" href="../experience/" data-i18n="nav.experience">Experience</a>
+      <a class="btn pill" href="../blog/" data-i18n="nav.blog">Blog</a>
+      <a class="btn pill" href="../contact/" data-i18n="nav.contact">Contact</a>
       <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
       <button class="theme-toggle" aria-label="Toggle theme">☀</button>
     </nav>
@@ -32,28 +32,33 @@
 
 <main class="container">
   <section class="section">
-    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);">← All projects</a></p>
-    <h1>Crossref Retraction Metadata Analysis</h1>
-    <p>A data quality research project analyzing retraction-flag phrases in titles and tracking indexing drift across DOI status snapshots (208 DOIs).</p>
+    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);" data-i18n="proj.back">← All projects</a></p>
+    <h1 data-i18n="proj.crossref.h1">Crossref Retraction Metadata Analysis</h1>
+    <p data-i18n="proj.crossref.intro">A data quality research project analyzing retraction-flag phrases in titles and tracking indexing drift across DOI status snapshots (208 DOIs).</p>
 
     <hr />
 
-    <h2>Problem</h2>
-    <p>Incorrect or drifting retraction metadata can propagate misinformation in scholarly databases and analytics pipelines.</p>
+    <h2 data-i18n="proj.problem.h2">Problem</h2>
+    <p data-i18n="proj.crossref.prob">Incorrect or drifting retraction metadata can propagate misinformation in scholarly databases and analytics pipelines.</p>
 
-    <h2>Context and constraints</h2>
+    <h2 data-i18n="proj.context.h2">Context and constraints</h2>
     <div class="card" style="padding: 12px 14px;">
       <ul class="list">
-        <li>Data: Crossref DOI metadata</li><li>Task: extract retraction/removal-notice phrases from titles and compare with retraction status</li><li>Time comparison: April 2023 vs July 2024</li><li>Observed drift: 208 DOIs marked retracted in April 2023 but not in July 2024</li>
+        <li data-i18n="proj.crossref.ctx.l1">Data: Crossref DOI metadata</li>
+        <li data-i18n="proj.crossref.ctx.l2">Task: extract retraction/removal-notice phrases from titles and compare with retraction status</li>
+        <li data-i18n="proj.crossref.ctx.l3">Time comparison: April 2023 vs July 2024</li>
+        <li data-i18n="proj.crossref.ctx.l4">Observed drift: 208 DOIs marked retracted in April 2023 but not in July 2024</li>
       </ul>
     </div>
 
-    <h2 style="margin-top:18px;">Approach</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.approach.h2">Approach</h2>
     <ul class="list">
-      <li>Collect DOI metadata snapshots</li><li>Extract retraction phrases from titles</li><li>Compare phrases to retraction status and report drift</li>
+      <li data-i18n="proj.crossref.app.l1">Collect DOI metadata snapshots</li>
+      <li data-i18n="proj.crossref.app.l2">Extract retraction phrases from titles</li>
+      <li data-i18n="proj.crossref.app.l3">Compare phrases to retraction status and report drift</li>
     </ul>
 
-    <h2 style="margin-top:18px;">Architecture</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.arch.h2">Architecture</h2>
     <pre class="mermaid">flowchart TB
     A["Crossref metadata"] --> B["Snapshot Apr 2023"]
     A --> C["Snapshot Jul 2024"]
@@ -63,27 +68,29 @@
     E --> F["Indexing drift report (208 DOIs)"]
     </pre>
 
-    <h2 style="margin-top:18px;">Implementation highlights</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.highlights.h2">Implementation highlights</h2>
     <ul class="list">
-      <li>Snapshot-based comparisons to detect status changes</li><li>Phrase extraction for retraction-signal consistency</li><li>Documentation-first approach for reproducibility</li>
+      <li data-i18n="proj.crossref.hl.l1">Snapshot-based comparisons to detect status changes</li>
+      <li data-i18n="proj.crossref.hl.l2">Phrase extraction for retraction-signal consistency</li>
+      <li data-i18n="proj.crossref.hl.l3">Documentation-first approach for reproducibility</li>
     </ul>
 
-    <h2 style="margin-top:18px;">Results and impact</h2>
-    <div class="notice">
+    <h2 style="margin-top:18px;" data-i18n="proj.results.h2">Results and impact</h2>
+    <div class="notice" data-i18n="proj.crossref.result">
       Identified indexing drift: 208 DOIs marked retracted in April 2023 but not in July 2024, highlighting risks of relying on a single metadata source.
     </div>
 
-    <h2 style="margin-top:18px;">Tech stack</h2>
-    <p>Python, metadata pipelines, data quality analysis.</p>
+    <h2 style="margin-top:18px;" data-i18n="proj.tech.h2">Tech stack</h2>
+    <p data-i18n="proj.crossref.tech">Python, metadata pipelines, data quality analysis.</p>
 
-    <h2 style="margin-top:18px;">Links</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.links.h2">Links</h2>
     <ul class="list">
       <li>Repo: <a href="https://github.com/luyangsi/Crossref_Metadata_Analysis" target="_blank" rel="noreferrer">https://github.com/luyangsi/Crossref_Metadata_Analysis</a></li>
       <li>Projects index: <a href="./">/projects/</a></li>
     </ul>
 
-    <h2 style="margin-top:18px;">What I’d improve next</h2>
-    <p>Add multi-source validation and automated anomaly detection for sudden status shifts.</p>
+    <h2 style="margin-top:18px;" data-i18n="proj.next.h2">What I'd improve next</h2>
+    <p data-i18n="proj.crossref.next">Add multi-source validation and automated anomaly detection for sudden status shifts.</p>
   </section>
 </main>
 
@@ -101,9 +108,8 @@
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="../assets/i18n.js"></script>
 <script src="../assets/main.js"></script>
 
 </body>

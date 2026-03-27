@@ -492,3 +492,5 @@ button:focus-visible {
   white-space: nowrap;
   border-width: 0;
 }
+
+.lang-toggle { font-size: 13px; padding: 6px 10px; }

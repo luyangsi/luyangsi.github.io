@@ -14,16 +14,16 @@
   <div class="container navbar">
     <a class="brand" href="../">
       <strong>Luyang Si</strong>
-      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+      <span class="small" data-i18n="nav.brand.tagline">Data Analytics • Business Intelligence • Behavioral Research</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
-      <a class="btn pill" href="../">Home</a>
-      <a class="btn pill" href="../projects/">Projects</a>
-      <a class="btn pill" href="../research/">Research</a>
-      <a class="btn pill" href="../experience/">Experience</a>
-      <a class="btn pill" href="../blog/">Blog</a>
-      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn pill" href="../" data-i18n="nav.home">Home</a>
+      <a class="btn pill" href="../projects/" data-i18n="nav.projects">Projects</a>
+      <a class="btn pill" href="../research/" data-i18n="nav.research">Research</a>
+      <a class="btn pill" href="../experience/" data-i18n="nav.experience">Experience</a>
+      <a class="btn pill" href="../blog/" data-i18n="nav.blog">Blog</a>
+      <a class="btn pill" href="../contact/" data-i18n="nav.contact">Contact</a>
       <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
       <button class="theme-toggle" aria-label="Toggle theme">☀</button>
     </nav>
@@ -32,16 +32,16 @@
 
 <main class="container">
   <section class="section" style="text-align: center; padding: 60px 20px;">
-    <h1>Resume</h1>
-    <p style="margin: 20px 0; font-size: 16px;">Download my resume below or redirect in 3 seconds...</p>
-    
+    <h1 data-i18n="resume.h1">Resume</h1>
+    <p style="margin: 20px 0; font-size: 16px;" data-i18n="resume.sub">Download my resume below or redirect in 3 seconds...</p>
+
     <div style="margin: 30px 0;">
-      <a class="btn primary" href="Luyang_Si_Resume.pdf" download style="font-size: 18px; padding: 12px 24px;">
+      <a class="btn primary" href="Luyang_Si_Resume.pdf" download style="font-size: 18px; padding: 12px 24px;" data-i18n="resume.btn">
         📄 Download Resume (PDF)
       </a>
     </div>
 
-    <p class="small" style="color: var(--muted); margin-top: 30px;">
+    <p class="small" style="color: var(--muted); margin-top: 30px;" data-i18n="resume.fallback" data-i18n-mode="html">
       If the file doesn't download automatically, <a href="Luyang_Si_Resume.pdf" target="_blank" rel="noreferrer">click here to view in browser</a>.
     </p>
   </section>
@@ -51,13 +51,14 @@
   <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center;">
     <span style="color:var(--muted);font-size:13px;">© <span id="yr"></span> Luyang Si</span>
     <nav style="display:flex;gap:16px;flex-wrap:wrap;">
-      <a href="../" style="color:var(--muted);font-size:13px;text-decoration:none;">Home</a>
-      <a href="../blog/" style="color:var(--muted);font-size:13px;text-decoration:none;">Blog</a>
-      <a href="../contact/" style="color:var(--muted);font-size:13px;text-decoration:none;">Contact</a>
+      <a href="../" style="color:var(--muted);font-size:13px;text-decoration:none;" data-i18n="footer.home">Home</a>
+      <a href="../blog/" style="color:var(--muted);font-size:13px;text-decoration:none;" data-i18n="footer.blog">Blog</a>
+      <a href="../contact/" style="color:var(--muted);font-size:13px;text-decoration:none;" data-i18n="footer.contact">Contact</a>
     </nav>
   </div>
 </footer>
 
+<script src="../assets/i18n.js"></script>
 <script src="../assets/main.js"></script>
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 <script>

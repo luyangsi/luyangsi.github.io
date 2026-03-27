@@ -43,16 +43,16 @@
   <div class="container navbar">
     <a class="brand" href="./">
       <strong>Luyang Si</strong>
-      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+      <span class="small" data-i18n="nav.brand.tagline">Data Analytics • Business Intelligence • Behavioral Research</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
-      <a class="btn pill primary" href="./">Home</a>
-      <a class="btn pill" href="./projects/">Projects</a>
-      <a class="btn pill" href="./research/">Research</a>
-      <a class="btn pill" href="./experience/">Experience</a>
-      <a class="btn pill" href="./blog/">Blog</a>
-      <a class="btn pill" href="./contact/">Contact</a>
+      <a class="btn pill primary" href="./" data-i18n="nav.home">Home</a>
+      <a class="btn pill" href="./projects/" data-i18n="nav.projects">Projects</a>
+      <a class="btn pill" href="./research/" data-i18n="nav.research">Research</a>
+      <a class="btn pill" href="./experience/" data-i18n="nav.experience">Experience</a>
+      <a class="btn pill" href="./blog/" data-i18n="nav.blog">Blog</a>
+      <a class="btn pill" href="./contact/" data-i18n="nav.contact">Contact</a>
       <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
       <button class="theme-toggle" aria-label="Toggle theme">☀</button>
     </nav>
@@ -64,23 +64,22 @@
     <div class="grid cols2" style="align-items:start;">
       <div>
         <div class="terminal-prompt">~/portfolio $</div>
-        <h1>Hi, I'm Luyang Si</h1>
+        <h1 data-i18n="home.h1">Hi, I'm Luyang Si</h1>
         <p class="hero-role">// data-analytics · business-intelligence · behavioral-research · nlp</p>
-        <p style="font-size:16px;">I build data pipelines, translate data into actionable business insights, conduct behavioral and product research, and apply NLP to real research problems.</p>
+        <p style="font-size:16px;" data-i18n="home.hero.body">I build data pipelines, translate data into actionable business insights, conduct behavioral and product research, and apply NLP to real research problems.</p>
 
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin: 16px 0 10px 0;">
-          <a class="btn primary" href="projects/">View projects</a>
+          <a class="btn primary" href="projects/" data-i18n="home.btn.projects">View projects</a>
           <a class="btn" href="https://www.linkedin.com/in/luyang-si-409468254/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="btn" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn" href="mailto:ls36@illinois.edu">Email</a>
-          <a class="btn" href="resume/Luyang_Si_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a class="btn" href="mailto:ls36@illinois.edu" data-i18n="home.btn.email">Email</a>
         </div>
 
         <div class="card proof" style="margin-top: 12px;">
-          <div class="proof-line"><span class="prompt">$</span><span>Built a dataset recommender across 25+ sources — discovery time <strong>2 hrs → &lt;5 min</strong>.</span></div>
-          <div class="proof-line"><span class="prompt">$</span><span>Crossref retraction pipeline — <strong>automated anomaly detection</strong> across 208 DOIs; precision/recall analysis of flag classifiers; manuscript under review.</span></div>
-          <div class="proof-line"><span class="prompt">$</span><span>Behavioral research at RtB — <strong>A/B-style policy impact analysis</strong> and precision/recall measurement of decision calibration for alpha-stage product metrics.</span></div>
-          <div class="proof-line"><span class="prompt">$</span><span>End-to-end sales pipelines at Narciszmade — automated KPI reporting informing <strong>pricing &amp; inventory strategy</strong>.</span></div>
+          <div class="proof-line"><span class="prompt">$</span><span data-i18n="home.proof.1">9 user behavior interviews + 4-round divergence study at RtB — translating decision patterns into measurable product signals for alpha-stage fintech.</span></div>
+          <div class="proof-line"><span class="prompt">$</span><span data-i18n="home.proof.2">Semiconductors data platform — 4-layer medallion pipeline with YAML rule engine (15+ checks), watermark ingestion, and yield analytics.</span></div>
+          <div class="proof-line"><span class="prompt">$</span><span data-i18n="home.proof.3" data-i18n-mode="html">Dataset recommender across 25+ sources — discovery time <strong>2 hrs → &lt;5 min</strong>; CFPB analysis surfaced ~450 complaint/month trend (p&lt;0.001).</span></div>
+          <div class="proof-line"><span class="prompt">$</span><span data-i18n="home.proof.4">Crossref retraction pipeline — automated drift detection across 208 DOIs; precision/recall analysis of flag classifiers; 3 conference presentations.</span></div>
         </div>
       </div>
 
@@ -88,7 +87,7 @@
         <img class="avatar-lg" src="images/profile.png" alt="Profile photo of Luyang Si" />
         <div style="font-weight:800; font-size: 18px; line-height:1.2;">Luyang Si</div>
         <div class="mono small" style="color: var(--accent); margin: 4px 0 6px 0;">data-analyst && researcher</div>
-        <div class="small" style="margin-bottom: 16px;">Champaign, IL</div>
+        <div class="small" style="margin-bottom: 16px;" data-i18n="home.location">Champaign, IL</div>
 
         <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom: 16px;">
           <span class="badge">Python</span>
@@ -100,10 +99,10 @@
         </div>
         <hr />
         <ul class="list" style="text-align:left;">
-          <li><strong>Data analytics &amp; BI:</strong> End-to-end sales pipelines, KPI dashboards, and executive reporting in Python, R, and Power BI.</li>
-          <li><strong>Behavioral research:</strong> Decision-making under uncertainty, confidence calibration, and transcript-level semantic analysis.</li>
-          <li><strong>Data engineering:</strong> Medallion-layered pipelines with watermarking, incremental ingestion, and schema-drift detection.</li>
-          <li><strong>NLP &amp; embeddings:</strong> Multilingual sentence embeddings, BERT, LLaMA fine-tuning for cross-language and healthcare applications.</li>
+          <li data-i18n="home.card.da" data-i18n-mode="html"><strong>Data analytics &amp; BI:</strong> End-to-end sales pipelines, KPI dashboards, and executive reporting in Python, R, and Power BI.</li>
+          <li data-i18n="home.card.beh" data-i18n-mode="html"><strong>Behavioral research:</strong> Decision-making under uncertainty, confidence calibration, and transcript-level semantic analysis.</li>
+          <li data-i18n="home.card.de" data-i18n-mode="html"><strong>Data engineering:</strong> Medallion-layered pipelines with watermarking, incremental ingestion, and schema-drift detection.</li>
+          <li data-i18n="home.card.nlp" data-i18n-mode="html"><strong>NLP &amp; embeddings:</strong> Multilingual sentence embeddings, BERT, LLaMA fine-tuning for cross-language and healthcare applications.</li>
         </ul>
         <hr />
         <p class="small" style="margin:0;">
@@ -116,11 +115,11 @@
   </section>
 
   <section class="section">
-    <h2>Skills</h2>
-    <p style="margin-bottom: 14px;">A snapshot. <a href="skills/" style="color: var(--accent);">View full proficiency breakdown →</a></p>
+    <h2 data-i18n="home.skills.h2">Skills</h2>
+    <p style="margin-bottom: 14px;" data-i18n="home.skills.snap" data-i18n-mode="html">A snapshot. <a href="skills/" style="color: var(--accent);">View full proficiency breakdown →</a></p>
     <div class="grid cols3" style="margin-top: 0;">
       <div class="card" style="padding: 16px;">
-        <h3 style="margin-bottom: 12px; color: var(--accent);">Data Analytics &amp; BI</h3>
+        <h3 style="margin-bottom: 12px; color: var(--accent);" data-i18n="home.skills.da">Data Analytics &amp; BI</h3>
         <div style="display:flex; flex-wrap:wrap; gap:8px;">
           <span class="badge">Python</span>
           <span class="badge">R</span>
@@ -132,7 +131,7 @@
         </div>
       </div>
       <div class="card" style="padding: 16px;">
-        <h3 style="margin-bottom: 12px; color: var(--accent);">Data Engineering</h3>
+        <h3 style="margin-bottom: 12px; color: var(--accent);" data-i18n="home.skills.de">Data Engineering</h3>
         <div style="display:flex; flex-wrap:wrap; gap:8px;">
           <span class="badge">Azure SQL</span>
           <span class="badge">ETL Pipelines</span>
@@ -143,7 +142,7 @@
         </div>
       </div>
       <div class="card" style="padding: 16px;">
-        <h3 style="margin-bottom: 12px; color: var(--accent);">NLP, ML &amp; Research</h3>
+        <h3 style="margin-bottom: 12px; color: var(--accent);" data-i18n="home.skills.nlp">NLP, ML &amp; Research</h3>
         <div style="display:flex; flex-wrap:wrap; gap:8px;">
           <span class="badge">Multilingual Embeddings</span>
           <span class="badge">BERT / spaCy</span>
@@ -159,42 +158,53 @@
   </section>
 
   <section class="section">
-    <h2>Featured projects</h2>
-    <p>Three fast reads for recruiters. Full list is on the Projects page.</p>
-    <div class="notice" style="margin-bottom: 16px;">
+    <h2 data-i18n="home.featured.h2">Featured projects</h2>
+    <p data-i18n="home.featured.sub">Four fast reads for recruiters. Full list is on the Projects page.</p>
+    <div class="notice" style="margin-bottom: 16px;" data-i18n="home.notice" data-i18n-mode="html">
       <strong>Currently:</strong> Open to data science, data engineering, and data analyst roles. Available immediately.
     </div>
     <div class="grid cols3" style="margin-top: 14px;">
 
 <article class="card project-card">
-  <h3>Research Dataset Recommendation System</h3>
-  <p>Matches research questions to datasets across 25+ sources; reduces search time from ~2 hours to <5 minutes.</p>
+  <h3 data-i18n="home.proj.recommender.h3">Research Dataset Recommendation System</h3>
+  <p data-i18n="home.proj.recommender.p">Matches research questions to datasets across 25+ sources; reduces search time from ~2 hours to <5 minutes.</p>
   <div class="project-tags"><span class="badge">Data Discovery</span> <span class="badge">Analytics</span> <span class="badge">Python</span></div>
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn primary" href="projects/research-dataset-recommender.html">Case study</a>
+    <a class="btn primary" href="projects/research-dataset-recommender.html" data-i18n="proj.casestudy">Case study</a>
     <a class="btn" href="https://github.com/luyangsi/Research_Dataset_Recommender" target="_blank" rel="noreferrer">Repo</a>
   </div>
 </article>
 
 
 <article class="card project-card">
-  <h3>Canvas Platform Data Ingestion</h3>
-  <p>Medallion-layered pipeline (raw/cur/meta) for Azure SQL with watermark-based incremental loads and monitoring.</p>
+  <h3 data-i18n="home.proj.canvas.h3">Canvas Platform Data Ingestion</h3>
+  <p data-i18n="home.proj.canvas.p">Medallion-layered pipeline (raw/cur/meta) for Azure SQL with watermark-based incremental loads and monitoring.</p>
   <div class="project-tags"><span class="badge">Data Engineering</span> <span class="badge">Azure SQL</span> <span class="badge">Watermarking</span></div>
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn primary" href="projects/canvas-platform-data-ingestion.html">Case study</a>
+    <a class="btn primary" href="projects/canvas-platform-data-ingestion.html" data-i18n="proj.casestudy">Case study</a>
     <a class="btn" href="https://github.com/luyangsi/Canvas_pipeline" target="_blank" rel="noreferrer">Repo</a>
   </div>
 </article>
 
 
 <article class="card project-card">
-  <h3>Crossref Retraction Metadata Analysis</h3>
-  <p>Analyzes retraction-flag consistency and tracks indexing drift (208 DOIs) impacting research integrity.</p>
+  <h3 data-i18n="home.proj.crossref.h3">Crossref Retraction Metadata Analysis</h3>
+  <p data-i18n="home.proj.crossref.p">Analyzes retraction-flag consistency and tracks indexing drift (208 DOIs) impacting research integrity.</p>
   <div class="project-tags"><span class="badge">Data Quality</span> <span class="badge">Metadata</span> <span class="badge">Research</span></div>
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn primary" href="projects/crossref-retraction-metadata.html">Case study</a>
+    <a class="btn primary" href="projects/crossref-retraction-metadata.html" data-i18n="proj.casestudy">Case study</a>
     <a class="btn" href="https://github.com/luyangsi/Crossref_Metadata_Analysis" target="_blank" rel="noreferrer">Repo</a>
+  </div>
+</article>
+
+
+<article class="card project-card">
+  <h3 data-i18n="home.proj.semi.h3">Semiconductors Data Platform</h3>
+  <p data-i18n="home.proj.semi.p">End-to-end fab operations pipeline with 4-layer medallion architecture, YAML rule engine (15+ validation checks), watermark-based incremental ingestion, and yield/equipment health analytics.</p>
+  <div class="project-tags"><span class="badge">Data Engineering</span> <span class="badge">Python</span> <span class="badge">Anomaly Detection</span> <span class="badge">Data Quality</span></div>
+  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+    <a class="btn primary" href="projects/semiconductors-data-platform.html" data-i18n="proj.casestudy">Case study</a>
+    <a class="btn" href="https://github.com/luyangsi/semiconductors_data_platform" target="_blank" rel="noreferrer">Repo</a>
   </div>
 </article>
 
@@ -216,6 +226,7 @@
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="assets/i18n.js"></script>
 <script src="assets/main.js"></script>
 
 </body>

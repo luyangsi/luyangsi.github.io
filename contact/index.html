@@ -7,7 +7,7 @@
   <meta name="description" content="Contact Luyang Si." />
   <link rel="icon" href="../favicon.svg" />
   <link rel="stylesheet" href="../assets/styles.css" />
-  
+
   <!-- JSON-LD Schema Markup -->
   <script type="application/ld+json">
   {
@@ -29,16 +29,16 @@
   <div class="container navbar">
     <a class="brand" href="../">
       <strong>Luyang Si</strong>
-      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+      <span class="small" data-i18n="nav.brand.tagline">Data Analytics • Business Intelligence • Behavioral Research</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
-      <a class="btn pill" href="../">Home</a>
-      <a class="btn pill" href="../projects/">Projects</a>
-      <a class="btn pill" href="../research/">Research</a>
-      <a class="btn pill" href="../experience/">Experience</a>
-      <a class="btn pill" href="../blog/">Blog</a>
-      <a class="btn pill primary" href="../contact/">Contact</a>
+      <a class="btn pill" href="../" data-i18n="nav.home">Home</a>
+      <a class="btn pill" href="../projects/" data-i18n="nav.projects">Projects</a>
+      <a class="btn pill" href="../research/" data-i18n="nav.research">Research</a>
+      <a class="btn pill" href="../experience/" data-i18n="nav.experience">Experience</a>
+      <a class="btn pill" href="../blog/" data-i18n="nav.blog">Blog</a>
+      <a class="btn pill primary" href="../contact/" data-i18n="nav.contact">Contact</a>
       <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
       <button class="theme-toggle" aria-label="Toggle theme">☀</button>
     </nav>
@@ -47,37 +47,37 @@
 
 <main class="container">
   <section class="section">
-    <h1>Contact</h1>
-    <p>Get in touch—I respond within 24 hours with next-step clarity and links to relevant work.</p>
+    <h1 data-i18n="contact.h1">Contact</h1>
+    <p data-i18n="contact.sub">Get in touch—I respond within 24 hours with next-step clarity and links to relevant work.</p>
 
     <div class="grid cols2" style="margin-top: 20px; gap: 20px;">
       <!-- Contact Form -->
       <div class="card" style="padding: 24px;">
-        <h2>Send a message</h2>
+        <h2 data-i18n="contact.form.h2">Send a message</h2>
         <form action="https://formspree.io/f/xyzwvpqr" method="POST" style="display: flex; flex-direction: column; gap: 14px;">
           <div>
-            <label for="name" style="display: block; margin-bottom: 6px; font-size: 14px; color: var(--muted);">Name</label>
+            <label for="name" style="display: block; margin-bottom: 6px; font-size: 14px; color: var(--muted);" data-i18n="contact.form.name">Name</label>
             <input type="text" id="name" name="name" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: rgba(11,15,23,.6); color: var(--text); font-family: inherit; font-size: 14px;">
           </div>
           <div>
-            <label for="email" style="display: block; margin-bottom: 6px; font-size: 14px; color: var(--muted);">Email</label>
+            <label for="email" style="display: block; margin-bottom: 6px; font-size: 14px; color: var(--muted);" data-i18n="contact.form.email">Email</label>
             <input type="email" id="email" name="email" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: rgba(11,15,23,.6); color: var(--text); font-family: inherit; font-size: 14px;">
           </div>
           <div>
-            <label for="subject" style="display: block; margin-bottom: 6px; font-size: 14px; color: var(--muted);">Subject</label>
+            <label for="subject" style="display: block; margin-bottom: 6px; font-size: 14px; color: var(--muted);" data-i18n="contact.form.subj">Subject</label>
             <input type="text" id="subject" name="subject" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: rgba(11,15,23,.6); color: var(--text); font-family: inherit; font-size: 14px;">
           </div>
           <div>
-            <label for="message" style="display: block; margin-bottom: 6px; font-size: 14px; color: var(--muted);">Message</label>
+            <label for="message" style="display: block; margin-bottom: 6px; font-size: 14px; color: var(--muted);" data-i18n="contact.form.msg">Message</label>
             <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: rgba(11,15,23,.6); color: var(--text); font-family: inherit; font-size: 14px; resize: vertical;"></textarea>
           </div>
-          <button type="submit" class="btn primary" style="width: 100%;">Send Message</button>
+          <button type="submit" class="btn primary" style="width: 100%;" data-i18n="contact.form.send">Send Message</button>
         </form>
       </div>
 
       <!-- Contact Info -->
       <div class="card" style="padding: 24px;">
-        <h2>Quick links</h2>
+        <h2 data-i18n="contact.links.h2">Quick links</h2>
         <ul class="list" style="margin-bottom: 20px;">
           <li><strong>Email:</strong> <a href="mailto:ls36@illinois.edu">ls36@illinois.edu</a></li>
           <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/luyang-si-409468254/" target="_blank" rel="noreferrer">luyang-si-409468254</a></li>
@@ -85,15 +85,15 @@
         </ul>
         <hr />
         <div style="margin-top: 16px;">
-          <p class="small" style="margin: 0 0 10px 0;"><strong>Response Time</strong></p>
-          <p class="small" style="margin: 0;">I typically respond within 24 hours on weekdays. For urgent matters, email is the fastest route.</p>
+          <p class="small" style="margin: 0 0 10px 0;" data-i18n="contact.resp.title" data-i18n-mode="html"><strong>Response Time</strong></p>
+          <p class="small" style="margin: 0;" data-i18n="contact.resp.body">I typically respond within 24 hours on weekdays. For urgent matters, email is the fastest route.</p>
         </div>
         <div style="margin-top: 16px;">
-          <p class="small" style="margin: 0 0 10px 0;"><strong>Best for</strong></p>
-          <p class="small" style="margin: 0;">Collaboration inquiries, project discussions, or data engineering opportunities.</p>
+          <p class="small" style="margin: 0 0 10px 0;" data-i18n="contact.best.title" data-i18n-mode="html"><strong>Best for</strong></p>
+          <p class="small" style="margin: 0;" data-i18n="contact.best.body">Collaboration inquiries, project discussions, or data engineering opportunities.</p>
         </div>
         <hr />
-        <p class="small" style="margin: 10px 0 0 0;">Resume: <a href="../resume/Luyang_Si_Tech_Resume.pdf" target="_blank" rel="noreferrer">download PDF</a></p>
+        <p class="small" style="margin: 10px 0 0 0;">Resume: <span data-i18n="contact.resume.lnk" data-i18n-mode="html"><a href="../resume/Luyang_Si_Resume.pdf" target="_blank" rel="noreferrer">download PDF</a></span></p>
       </div>
     </div>
   </section>
@@ -113,6 +113,7 @@
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="../assets/i18n.js"></script>
 <script src="../assets/main.js"></script>
 
 </body>

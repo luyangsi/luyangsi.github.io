@@ -14,16 +14,16 @@
   <div class="container navbar">
     <a class="brand" href="../">
       <strong>Luyang Si</strong>
-      <span class="small">Data Analytics • Business Intelligence • Behavioral Research</span>
+      <span class="small" data-i18n="nav.brand.tagline">Data Analytics • Business Intelligence • Behavioral Research</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="navlinks">
-      <a class="btn pill" href="../">Home</a>
-      <a class="btn pill primary" href="../projects/">Projects</a>
-      <a class="btn pill" href="../research/">Research</a>
-      <a class="btn pill" href="../experience/">Experience</a>
-      <a class="btn pill" href="../blog/">Blog</a>
-      <a class="btn pill" href="../contact/">Contact</a>
+      <a class="btn pill" href="../" data-i18n="nav.home">Home</a>
+      <a class="btn pill primary" href="../projects/" data-i18n="nav.projects">Projects</a>
+      <a class="btn pill" href="../research/" data-i18n="nav.research">Research</a>
+      <a class="btn pill" href="../experience/" data-i18n="nav.experience">Experience</a>
+      <a class="btn pill" href="../blog/" data-i18n="nav.blog">Blog</a>
+      <a class="btn pill" href="../contact/" data-i18n="nav.contact">Contact</a>
       <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
       <button class="theme-toggle" aria-label="Toggle theme">☀</button>
     </nav>
@@ -32,28 +32,32 @@
 
 <main class="container">
   <section class="section">
-    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);">← All projects</a></p>
-    <h1>Sports Motivation Analysis</h1>
-    <p>An applied research analysis repository using simulated data to preserve privacy while keeping schema consistent for reproducible workflows.</p>
+    <p class="small" style="margin-bottom: 4px;"><a href="../projects/" style="color: var(--accent);" data-i18n="proj.back">← All projects</a></p>
+    <h1 data-i18n="proj.sports.h1">Sports Motivation Analysis</h1>
+    <p data-i18n="proj.sports.intro">An applied research analysis repository using simulated data to preserve privacy while keeping schema consistent for reproducible workflows.</p>
 
     <hr />
 
-    <h2>Problem</h2>
-    <p>Human-subject datasets require protection; sharing analysis code should not expose participant records.</p>
+    <h2 data-i18n="proj.problem.h2">Problem</h2>
+    <p data-i18n="proj.sports.prob">Human-subject datasets require protection; sharing analysis code should not expose participant records.</p>
 
-    <h2>Context and constraints</h2>
+    <h2 data-i18n="proj.context.h2">Context and constraints</h2>
     <div class="card" style="padding: 12px 14px;">
       <ul class="list">
-        <li>Use simulated data with the same schema as the original study data</li><li>Separate data generation from analysis</li><li>Constraints: do not invent findings; keep placeholders if not documented</li>
+        <li data-i18n="proj.sports.ctx.l1">Use simulated data with the same schema as the original study data</li>
+        <li data-i18n="proj.sports.ctx.l2">Separate data generation from analysis</li>
+        <li data-i18n="proj.sports.ctx.l3">Constraints: do not invent findings; keep placeholders if not documented</li>
       </ul>
     </div>
 
-    <h2 style="margin-top:18px;">Approach</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.approach.h2">Approach</h2>
     <ul class="list">
-      <li>Define analysis plan and schema</li><li>Generate a simulated dataset preserving schema</li><li>Run analysis and reporting in a reproducible structure</li>
+      <li data-i18n="proj.sports.app.l1">Define analysis plan and schema</li>
+      <li data-i18n="proj.sports.app.l2">Generate a simulated dataset preserving schema</li>
+      <li data-i18n="proj.sports.app.l3">Run analysis and reporting in a reproducible structure</li>
     </ul>
 
-    <h2 style="margin-top:18px;">Architecture</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.arch.h2">Architecture</h2>
     <pre class="mermaid">
 flowchart LR
   A[Study design] --> B[Define schema]
@@ -63,27 +67,29 @@ flowchart LR
   E --> F[Privacy-safe sharing]
     </pre>
 
-    <h2 style="margin-top:18px;">Implementation highlights</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.highlights.h2">Implementation highlights</h2>
     <ul class="list">
-      <li>Privacy-first data handling via simulated dataset with preserved schema</li><li>Reproducible layout for notebooks/reports</li><li>Clear boundaries for what is shared publicly</li>
+      <li data-i18n="proj.sports.hl.l1">Privacy-first data handling via simulated dataset with preserved schema</li>
+      <li data-i18n="proj.sports.hl.l2">Reproducible layout for notebooks/reports</li>
+      <li data-i18n="proj.sports.hl.l3">Clear boundaries for what is shared publicly</li>
     </ul>
 
-    <h2 style="margin-top:18px;">Results and impact</h2>
-    <div class="notice">
-      In terms of negatively impacting wellbeing, physical activity experiences should reduce the focus on outcome-oriented goals such as winning and losing, comparisons to peers, focusing on body image or appearance, and forced involvement in physical activity or sport. 
+    <h2 style="margin-top:18px;" data-i18n="proj.results.h2">Results and impact</h2>
+    <div class="notice" data-i18n="proj.sports.result">
+      In terms of negatively impacting wellbeing, physical activity experiences should reduce the focus on outcome-oriented goals such as winning and losing, comparisons to peers, focusing on body image or appearance, and forced involvement in physical activity or sport.
     </div>
 
-    <h2 style="margin-top:18px;">Tech stack</h2>
-    <p>Python, data analysis, reproducible reporting.</p>
+    <h2 style="margin-top:18px;" data-i18n="proj.tech.h2">Tech stack</h2>
+    <p data-i18n="proj.sports.tech">Python, data analysis, reproducible reporting.</p>
 
-    <h2 style="margin-top:18px;">Links</h2>
+    <h2 style="margin-top:18px;" data-i18n="proj.links.h2">Links</h2>
     <ul class="list">
       <li>Repo: <a href="https://github.com/luyangsi/Sports_Motivitation_Analysis" target="_blank" rel="noreferrer">https://github.com/luyangsi/Sports_Motivitation_Analysis</a></li>
       <li>Projects index: <a href="./">/projects/</a></li>
     </ul>
 
-    <h2 style="margin-top:18px;">What I’d improve next</h2>
-    <p>Add a documented analysis protocol and an automated notebook-to-HTML report pipeline in CI.</p>
+    <h2 style="margin-top:18px;" data-i18n="proj.next.h2">What I'd improve next</h2>
+    <p data-i18n="proj.sports.next">Add a documented analysis protocol and an automated notebook-to-HTML report pipeline in CI.</p>
   </section>
 </main>
 
@@ -101,9 +107,8 @@ flowchart LR
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="../assets/i18n.js"></script>
 <script src="../assets/main.js"></script>
 
 </body>
