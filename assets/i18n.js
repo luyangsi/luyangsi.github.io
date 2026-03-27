@@ -334,6 +334,9 @@
     'contact.best.title': { zh: '<strong>适合咨询</strong>' },
     'contact.best.body':  { zh: '合作探讨、项目交流，或数据工程相关机会。' },
     'contact.resume.lnk': { zh: '<a href="../resume/Luyang_Si_Resume.pdf" target="_blank" rel="noreferrer">下载 PDF</a>' },
+    'contact.sent.h1':   { zh: '消息已发送！' },
+    'contact.sent.p':    { zh: '感谢您的来信，我会在 24 小时内回复您。' },
+    'contact.sent.back': { zh: '← 返回联系页' },
 
     // ── resume/index.html
     'resume.h1':       { zh: '简历' },
