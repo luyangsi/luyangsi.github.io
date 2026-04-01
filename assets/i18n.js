@@ -307,7 +307,7 @@
     // ── blog/prompting-is-not-magic.html
     'blog.prompting.allposts':      { zh: '← 所有文章' },
     'blog.prompting.h1':            { zh: 'Prompting 不是魔法' },
-    'blog.prompting.subtitle':      { zh: '读完《Prompt Report》，我重新思考了"好的 Prompting"究竟意味着什么' },
+    'blog.prompting.subtitle':      { zh: '读完《The Prompt Report》，我重新思考了"好的 Prompting"究竟意味着什么' },
     'blog.prompting.quote':         { zh: '"真正的技能不是找到完美的提示词，而是建立一套持续改进提示词的流程。"' },
     'blog.prompting.intro.p1':      { zh: '我最近读了《The Prompt Report: A Systematic Survey of Prompt Engineering Techniques》，最让我欣赏的是它没有任何神秘主义色彩。' },
     'blog.prompting.intro.p2':      { zh: '很多关于提示工程的文章读起来仍像民间传说。我们被告知，某处存在一个完美的短语——一种能解锁模型全部智能的神秘指令组合。提示词变成了一种咒语。如果失败了，默认假设是我们还没找到正确的措辞。' },
