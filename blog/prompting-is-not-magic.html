@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prompting Is Not Magic | Luyang Si</title>
+  <meta name="description" content="Reading The Prompt Report made me rethink what 'good prompting' actually means. Prompting is becoming less like prompt writing and more like behavior design." />
+  <link rel="icon" href="../favicon.svg" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="brand" href="../">
+      <strong data-i18n="nav.brand.name">Luyang Si</strong>
+      <span class="small" data-i18n="nav.brand.tagline">Data Analytics • Business Intelligence • Behavioral Research</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="navlinks">
+      <a class="btn pill" href="../" data-i18n="nav.home">Home</a>
+      <a class="btn pill" href="../projects/" data-i18n="nav.projects">Projects</a>
+      <a class="btn pill" href="../research/" data-i18n="nav.research">Research</a>
+      <a class="btn pill" href="../experience/" data-i18n="nav.experience">Experience</a>
+      <a class="btn pill primary" href="../blog/" data-i18n="nav.blog">Blog</a>
+      <a class="btn pill" href="../contact/" data-i18n="nav.contact">Contact</a>
+      <a class="btn primary" href="https://github.com/luyangsi" target="_blank" rel="noreferrer">GitHub</a>
+      <button class="theme-toggle" aria-label="Toggle theme">☀</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <article class="blog-post section">
+
+    <p class="small" style="margin-bottom: 4px;">
+      <a href="../blog/" style="color: var(--accent);" data-i18n="blog.prompting.allposts">← All posts</a>
+    </p>
+
+    <header class="blog-post-header">
+      <div class="blog-meta">
+        <time class="blog-date" datetime="2026-04-01">Apr 1, 2026</time>
+        <div class="blog-tags">
+          <span class="badge">LLM</span>
+          <span class="badge">Prompt Engineering</span>
+          <span class="badge">AI</span>
+        </div>
+      </div>
+      <h1 data-i18n="blog.prompting.h1">Prompting Is Not Magic</h1>
+      <p class="blog-subtitle" data-i18n="blog.prompting.subtitle">Reading <em>The Prompt Report</em> made me rethink what "good prompting" actually means</p>
+    </header>
+
+    <hr />
+
+    <div class="blog-body">
+
+      <blockquote style="border-left: 3px solid var(--accent); margin: 0 0 24px 0; padding: 10px 20px; color: var(--muted); font-style: italic;">
+        <p data-i18n="blog.prompting.quote">"The real skill is not finding the perfect prompt. It is building a process for improving prompts over time."</p>
+      </blockquote>
+
+      <p data-i18n="blog.prompting.intro.p1">I recently read <em>The Prompt Report: A Systematic Survey of Prompt Engineering Techniques</em>, and what I appreciated most about it was its lack of mysticism.</p>
+
+      <p data-i18n="blog.prompting.intro.p2">A lot of writing about prompting still sounds like folklore. Somewhere out there, we are told, there exists a perfect phrase — a secret arrangement of instructions that will unlock the model's full intelligence. The prompt becomes a kind of spell. If it fails, the assumption is that we simply have not found the right wording yet.</p>
+
+      <p data-i18n="blog.prompting.intro.p3">This paper pushes in the opposite direction. Instead of treating prompting as a collection of clever tricks, it treats it as a field that can be organized, analyzed, and improved systematically. That shift sounds small, but I think it matters. It changes prompting from something you perform into something you engineer.</p>
+
+      <p data-i18n="blog.prompting.intro.p4">And that is the main reason I found the paper useful.</p>
+
+      <h2 data-i18n="blog.prompting.map.h2">The paper's biggest contribution is not a trick, but a map</h2>
+
+      <p data-i18n="blog.prompting.map.p1">At a high level, <em>The Prompt Report</em> tries to bring order to a space that has grown faster than its vocabulary. It proposes a structured taxonomy of prompting methods, clarifies terminology, and surveys a large body of prior work rather than focusing on a single headline technique.</p>
+
+      <p data-i18n="blog.prompting.map.p2">What that means in practice is that the paper is less interested in selling you one "best" method than in helping you understand the landscape: what kinds of prompting techniques exist, how they differ, where they are used, and what assumptions they rely on.</p>
+
+      <p data-i18n="blog.prompting.map.p3">That alone makes it more valuable than most prompt advice floating around online. The internet is full of prompt templates. What is much rarer is a framework for thinking about prompts.</p>
+
+      <h2 data-i18n="blog.prompting.iter.h2">The most important idea: prompting is iterative</h2>
+
+      <p data-i18n="blog.prompting.iter.p1">The biggest mental shift I took from the paper is this: prompt engineering is not about writing a brilliant instruction once. It is about iterating on a task interface.</p>
+
+      <p data-i18n="blog.prompting.iter.p2">That framing is simple, but it cuts through a lot of confusion. A prompt is not just a sentence. It is a working surface between a human intention and a model behavior. And like most interfaces, it rarely comes out right on the first try.</p>
+
+      <ul class="list">
+        <li data-i18n="blog.prompting.iter.l1">You test it.</li>
+        <li data-i18n="blog.prompting.iter.l2">You inspect failures.</li>
+        <li data-i18n="blog.prompting.iter.l3">You tighten the wording.</li>
+        <li data-i18n="blog.prompting.iter.l4">You restructure the output.</li>
+        <li data-i18n="blog.prompting.iter.l5">You try examples.</li>
+        <li data-i18n="blog.prompting.iter.l6">You compare variants.</li>
+        <li data-i18n="blog.prompting.iter.l7">You repeat.</li>
+      </ul>
+
+      <p data-i18n="blog.prompting.iter.p3">This sounds closer to product design or experimental workflow tuning than to writing. And I think that is exactly right.</p>
+
+      <p data-i18n="blog.prompting.iter.p4">Once you see prompting that way, "being good at prompts" starts to mean something different. It is no longer mainly about sounding clever or authoritative. It becomes a matter of being systematic: defining the task clearly, constraining ambiguity, evaluating outputs, and making small changes deliberately. That feels much closer to reality than the usual mythology.</p>
+
+      <h2 data-i18n="blog.prompting.lang.h2">Most prompt problems are not language problems</h2>
+
+      <p data-i18n="blog.prompting.lang.p1">One of the most useful distinctions in the paper is between prompt engineering and answer engineering.</p>
+
+      <p data-i18n="blog.prompting.lang.p2">Prompt engineering is about how you ask. Answer engineering is about how the model answers — and, more importantly, whether that answer is actually usable.</p>
+
+      <p data-i18n="blog.prompting.lang.p3">This is an underappreciated point. In many workflows, the failure is not that the model misunderstood the task. The failure is that it returned something messy, inconsistent, or difficult to parse. The model may be directionally correct and still practically unusable.</p>
+
+      <p data-i18n="blog.prompting.lang.p4">That is why output design matters so much:</p>
+
+      <ul class="list">
+        <li data-i18n="blog.prompting.lang.l1">If you need one label, ask for one label.</li>
+        <li data-i18n="blog.prompting.lang.l2">If you need structured data, ask for structured data.</li>
+        <li data-i18n="blog.prompting.lang.l3">If only three values are allowed, define the set explicitly.</li>
+        <li data-i18n="blog.prompting.lang.l4">If a downstream system needs predictable formatting, do not leave the shape of the answer open-ended.</li>
+      </ul>
+
+      <p data-i18n="blog.prompting.lang.p5">This seems obvious in retrospect, but many people start by trying to make the model "smarter" when the real issue is that the output contract is too loose. In that sense, a surprising amount of prompt engineering is really interface discipline.</p>
+
+      <h2 data-i18n="blog.prompting.sens.h2">Small changes matter more than they should</h2>
+
+      <p data-i18n="blog.prompting.sens.p1">Another recurring theme in the paper is prompt sensitivity. Models can be strangely responsive to details that humans would consider minor: formatting, ordering, delimiters, wording, the placement of examples, even stylistic inconsistencies. That makes prompting feel unstable in a way that traditional software often does not.</p>
+
+      <p data-i18n="blog.prompting.sens.p2">You can have two prompts that mean nearly the same thing to a human reader and still produce noticeably different results. That has two implications.</p>
+
+      <p data-i18n="blog.prompting.sens.p3">First, prompt design deserves more rigor than people often give it. If details matter, then versioning, evaluation, and careful comparison matter too.</p>
+
+      <p data-i18n="blog.prompting.sens.p4">Second, we should be cautious about over-explaining success. When a prompt works, it is tempting to build a story about why it works. Sometimes that story is right. Sometimes the model is responding to something much more local and idiosyncratic than we realize. In other words: prompting rewards experimentation, but it punishes overconfidence.</p>
+
+      <h2 data-i18n="blog.prompting.adv.h2">"Advanced" prompting is not automatically better</h2>
+
+      <p data-i18n="blog.prompting.adv.p1">The paper also includes benchmarking across different prompting strategies, and one of the healthier lessons is that more elaborate methods do not always win.</p>
+
+      <p data-i18n="blog.prompting.adv.p2">That should not be surprising, but it is a useful corrective. Once a technique gets a recognizable name, it tends to acquire status. People start to treat it as an upgrade by default. Add chain-of-thought. Add self-consistency. Add examples. Add decomposition. Add another layer.</p>
+
+      <p data-i18n="blog.prompting.adv.p3">But sophistication is not the same thing as fitness for purpose. Some tasks benefit from extra structure. Some do not. Some prompting methods help only under specific conditions. Some improve one dimension of performance while making another worse. The right comparison is not between "simple" and "advanced" in the abstract — it is between alternatives on the task you actually care about.</p>
+
+      <p data-i18n="blog.prompting.adv.p4">The practical lesson is straightforward: treat prompting techniques like experimental variables, not prestige markers.</p>
+
+      <h2 data-i18n="blog.prompting.case.h2">The case study is the most honest part of the paper</h2>
+
+      <p data-i18n="blog.prompting.case.p1">The section I found most memorable was the real-world case study on a difficult classification problem involving mental-health-related language.</p>
+
+      <p data-i18n="blog.prompting.case.p2">What makes that section so strong is that it does not pretend prompt engineering is clean. The paper shows an actual iterative process: attempts, revisions, false starts, output-format problems, model behavior that is hard to explain, and gradual improvement rather than a magical breakthrough. At one point, a duplicated piece of text in the prompt appeared to help performance in a way that was not easy to justify. That detail stayed with me because it captures the current state of the field better than any elegant diagram could.</p>
+
+      <p data-i18n="blog.prompting.case.p3">Prompting today is partly engineering and partly empirical negotiation with a system that is not fully transparent. That does not make it useless. It just means the right mindset is not certainty. It is disciplined iteration.</p>
+
+      <h2 data-i18n="blog.prompting.changed.h2">What I changed after reading it</h2>
+
+      <p data-i18n="blog.prompting.changed.p1">After reading <em>The Prompt Report</em>, I came away with a much simpler view of what good prompting practice should look like:</p>
+
+      <ol class="list" style="padding-left: 22px;">
+        <li data-i18n="blog.prompting.changed.l1" data-i18n-mode="html"><strong>Start with the task, not the wording.</strong> Before you optimize the phrasing, define what success actually is. Are you classifying, extracting, summarizing, rewriting, or generating? A vague task usually leads to a vague prompt.</li>
+        <li data-i18n="blog.prompting.changed.l2" data-i18n-mode="html"><strong>Constrain the output early.</strong> A clean answer format often matters more than a clever instruction. If the output needs to be reliable, specify its shape as early as possible.</li>
+        <li data-i18n="blog.prompting.changed.l3" data-i18n-mode="html"><strong>Build a baseline before adding techniques.</strong> Try the simplest workable version first. Without a baseline, you cannot tell whether examples, reasoning steps, or extra scaffolding actually improved anything.</li>
+        <li data-i18n="blog.prompting.changed.l4" data-i18n-mode="html"><strong>Treat formatting as a real variable.</strong> Delimiters, ordering, and examples are not cosmetic. They can change behavior in meaningful ways.</li>
+        <li data-i18n="blog.prompting.changed.l5" data-i18n-mode="html"><strong>Version your prompts.</strong> A prompt that works today may drift tomorrow, especially when the underlying model changes. Good prompts are maintained, not merely written.</li>
+        <li data-i18n="blog.prompting.changed.l6" data-i18n-mode="html"><strong>Bring domain knowledge into the loop.</strong> Prompt quality is not just about language. It depends on understanding the task well enough to define what the model should and should not do.</li>
+        <li data-i18n="blog.prompting.changed.l7" data-i18n-mode="html"><strong>Do not confuse one good output with a robust workflow.</strong> An impressive demo is not the same thing as a stable system. Confidence should come from repeated evaluation.</li>
+      </ol>
+
+      <h2 data-i18n="blog.prompting.takeaway.h2">The bigger takeaway</h2>
+
+      <p data-i18n="blog.prompting.takeaway.p1">If I had to reduce the paper to one sentence, it would be this: prompting is becoming less like prompt writing and more like behavior design.</p>
+
+      <p data-i18n="blog.prompting.takeaway.p2">That is a good thing. It means the field is maturing. It means we can stop talking about prompts as if they are magical artifacts and start treating them as components in a broader system: task framing, output design, evaluation, monitoring, and iteration.</p>
+
+      <p data-i18n="blog.prompting.takeaway.p3">That is also why I think this paper is worth reading even for people who already use language models every day. Not because it contains a secret method, but because it helps replace superstition with method. And right now, that is probably more valuable.</p>
+
+    </div>
+
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center;">
+    <span style="color:var(--muted);font-size:13px;">© <span id="yr"></span> <span data-i18n="footer.name">Luyang Si</span></span>
+    <nav style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="../" style="color:var(--muted);font-size:13px;text-decoration:none;" data-i18n="footer.home">Home</a>
+      <a href="../blog/" style="color:var(--muted);font-size:13px;text-decoration:none;" data-i18n="footer.blog">Blog</a>
+      <a href="../contact/" style="color:var(--muted);font-size:13px;text-decoration:none;" data-i18n="footer.contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/i18n.js"></script>
+<script src="../assets/main.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
