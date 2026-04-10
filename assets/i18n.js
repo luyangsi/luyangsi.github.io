@@ -3,7 +3,7 @@
 
   var T = {
     // ── Shared: Navbar
-    'nav.brand.tagline': { zh: '数据分析 • 商业智能 • 行为研究' },
+    'nav.brand.tagline': { zh: '数据科学家 · 行为研究员 · AI 驱动构建者' },
     'nav.brand.name':    { zh: '司陆阳' },
     'nav.home':          { zh: '主页' },
     'nav.projects':      { zh: '项目' },
@@ -43,7 +43,7 @@
     'home.skills.nlp':   { zh: 'NLP、机器学习与研究' },
     'home.featured.h2':  { zh: '精选项目' },
     'home.featured.sub': { zh: '四个项目速读，面向招聘方。完整列表见项目页。' },
-    'home.notice':       { zh: '<strong>当前状态：</strong>正在寻找数据科学、数据工程及数据分析师岗位，可立即入职。' },
+    'home.notice':       { zh: '<strong>当前状态：</strong>正在寻找数据、研究及产品方向的全职机会，可立即入职。' },
     'home.proj.recommender.h3': { zh: '研究数据集推荐系统' },
     'home.proj.recommender.p':  { zh: '将研究问题匹配至 25+ 个数据源；检索时间从约 2 小时缩短至 5 分钟以内。' },
     'home.proj.canvas.h3':      { zh: 'Canvas 平台数据摄取' },
